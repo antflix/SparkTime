@@ -9,10 +9,10 @@ struct JobsView: View {
 	@State private var selectedRow: Int?
 	@Environment(\.colorScheme) var colorScheme
 	private let apiURL = "https://app.antflix.net/api/joblist"
-	@State private var showingPopover: [Bool] = [] // Add state for showing popover
+	@State private var showingPopover: [Int: Bool] = [:]
 	@State private var isEmployeeViewActive = false
 	private func updatePopoverArray() {
-		showingPopover = Array(repeating: false, count: filteredJobs.count)
+		showingPopover = Dictionary(uniqueKeysWithValues: jobs.enumerated().map { (index, _) in (index, false) })
 	}
 
 	var filteredJobs: [[String]] {
@@ -25,10 +25,10 @@ struct JobsView: View {
 			}
 		}
 	}
-
+	
 	init() {
 		// Initialize showingPopover in the init() method after filteredJobs is available
-		let initialShowPopover = [Bool](repeating: false, count: filteredJobs.count)
+		let initialShowPopover = Dictionary(uniqueKeysWithValues: jobs.enumerated().map { (index, _) in (index, false) })
 		_showingPopover = State(initialValue: initialShowPopover)
 	}
 	var body: some View {
@@ -48,6 +48,11 @@ struct JobsView: View {
 			.foregroundColor(.white)
 			.font(.headline)
 			ScrollView {
+				
+				
+				
+				
+				
 				ForEach(0..<filteredJobs.count, id: \.self) { index in
 					let job = filteredJobs[index]
 					HStack {
@@ -58,12 +63,12 @@ struct JobsView: View {
 						Spacer()
 						Button(action: {
 							if index < showingPopover.count {
-								showingPopover[index].toggle()
+								showingPopover[index] = !(showingPopover[index] ?? false)
 							}}) {
 								Image(systemName: "info.circle")
 									.foregroundColor(.blue)
 							}
-							.popover(isPresented: $showingPopover[index]) {
+							.popover(isPresented: Binding<Bool>(get: { showingPopover[index] ?? false }, set: { showingPopover[index] = $0 })) {
 								VStack {
 									// Define your popover content here
 									Spacer()
@@ -108,7 +113,7 @@ struct JobsView: View {
 			.onAppear {
 				// Initialize the showingPopover array based on the number of jobs
 				fetchData()
-				showingPopover = Array(repeating: false, count: jobs.count)
+//				showingPopover = Array(repeating: false, count: jobs.count)
 				resetEmployeeData() // Call the function to reset employee data when the view appears
 
 				dataManager.selectedJobID = ""
