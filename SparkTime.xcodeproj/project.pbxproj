@@ -8,18 +8,52 @@
 
 /* Begin PBXBuildFile section */
 		CE81D7AC2B3D5D6200610785 /* SparkTimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81D7AB2B3D5D6200610785 /* SparkTimeApp.swift */; };
-		CE81D7AE2B3D5D6200610785 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81D7AD2B3D5D6200610785 /* ContentView.swift */; };
-		CE81D7B02B3D5D6400610785 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE81D7AF2B3D5D6400610785 /* Assets.xcassets */; };
 		CE81D7B42B3D5D6400610785 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE81D7B32B3D5D6400610785 /* Preview Assets.xcassets */; };
+		CE81D7D52B3D5DAE00610785 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE81D7BA2B3D5DAC00610785 /* Assets.xcassets */; };
+		CE81D7D72B3D5DAE00610785 /* ContactPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81D7BD2B3D5DAD00610785 /* ContactPickerViewController.swift */; };
+		CE81D7D82B3D5DAE00610785 /* SMSGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81D7BE2B3D5DAD00610785 /* SMSGenerator.swift */; };
+		CE81D7D92B3D5DAE00610785 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81D7BF2B3D5DAD00610785 /* extensions.swift */; };
+		CE81D7DA2B3D5DAE00610785 /* ContactsSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81D7C02B3D5DAD00610785 /* ContactsSelectionView.swift */; };
+		CE81D7DC2B3D5DAE00610785 /* toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81D7C32B3D5DAD00610785 /* toolbar.swift */; };
+		CE81D7DF2B3D5DAE00610785 /* AlarmSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81D7C62B3D5DAD00610785 /* AlarmSettingView.swift */; };
+		CE81D7E02B3D5DAE00610785 /* customAlarm-2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE81D7C72B3D5DAD00610785 /* customAlarm-2.mp3 */; };
+		CE81D7E12B3D5DAE00610785 /* alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE81D7C82B3D5DAD00610785 /* alarm.mp3 */; };
+		CE81D7E22B3D5DAE00610785 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81D7C92B3D5DAD00610785 /* BackButton.swift */; };
+		CE81D7E32B3D5DAE00610785 /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81D7CA2B3D5DAD00610785 /* LaunchScreen.swift */; };
+		CE81D7E42B3D5DAE00610785 /* AlarmSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81D7CB2B3D5DAD00610785 /* AlarmSound.swift */; };
+		CE81D7E62B3D5DAE00610785 /* customalarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE81D7CD2B3D5DAD00610785 /* customalarm.mp3 */; };
+		CE81D7E72B3D5DAE00610785 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81D7CE2B3D5DAD00610785 /* DataManager.swift */; };
+		CE81D7E82B3D5DAE00610785 /* PreViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81D7D02B3D5DAE00610785 /* PreViews.swift */; };
+		CE81D7E92B3D5DAE00610785 /* EmployeesViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81D7D12B3D5DAE00610785 /* EmployeesViews.swift */; };
+		CE81D7EA2B3D5DAE00610785 /* JobsViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81D7D22B3D5DAE00610785 /* JobsViews.swift */; };
+		CE81D7EB2B3D5DAE00610785 /* EmployeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81D7D32B3D5DAE00610785 /* EmployeeView.swift */; };
+		CE81D7EC2B3D5DAE00610785 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81D7D42B3D5DAE00610785 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CE81D7A82B3D5D6200610785 /* SparkTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SparkTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE81D7AB2B3D5D6200610785 /* SparkTimeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkTimeApp.swift; sourceTree = "<group>"; };
-		CE81D7AD2B3D5D6200610785 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		CE81D7AF2B3D5D6400610785 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE81D7B12B3D5D6400610785 /* SparkTime.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SparkTime.entitlements; sourceTree = "<group>"; };
 		CE81D7B32B3D5D6400610785 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CE81D7BA2B3D5DAC00610785 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../Time Turner-Inner 3.0/Time Turner-Inner 3.0/Assets.xcassets"; sourceTree = "<group>"; };
+		CE81D7BD2B3D5DAD00610785 /* ContactPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactPickerViewController.swift; sourceTree = "<group>"; };
+		CE81D7BE2B3D5DAD00610785 /* SMSGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMSGenerator.swift; sourceTree = "<group>"; };
+		CE81D7BF2B3D5DAD00610785 /* extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
+		CE81D7C02B3D5DAD00610785 /* ContactsSelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsSelectionView.swift; sourceTree = "<group>"; };
+		CE81D7C32B3D5DAD00610785 /* toolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = toolbar.swift; sourceTree = "<group>"; };
+		CE81D7C62B3D5DAD00610785 /* AlarmSettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmSettingView.swift; sourceTree = "<group>"; };
+		CE81D7C72B3D5DAD00610785 /* customAlarm-2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "customAlarm-2.mp3"; sourceTree = "<group>"; };
+		CE81D7C82B3D5DAD00610785 /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm.mp3; sourceTree = "<group>"; };
+		CE81D7C92B3D5DAD00610785 /* BackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		CE81D7CA2B3D5DAD00610785 /* LaunchScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
+		CE81D7CB2B3D5DAD00610785 /* AlarmSound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmSound.swift; sourceTree = "<group>"; };
+		CE81D7CD2B3D5DAD00610785 /* customalarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = customalarm.mp3; sourceTree = "<group>"; };
+		CE81D7CE2B3D5DAD00610785 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		CE81D7D02B3D5DAE00610785 /* PreViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreViews.swift; sourceTree = "<group>"; };
+		CE81D7D12B3D5DAE00610785 /* EmployeesViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeesViews.swift; sourceTree = "<group>"; };
+		CE81D7D22B3D5DAE00610785 /* JobsViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobsViews.swift; sourceTree = "<group>"; };
+		CE81D7D32B3D5DAE00610785 /* EmployeeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeView.swift; sourceTree = "<group>"; };
+		CE81D7D42B3D5DAE00610785 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,9 +86,12 @@
 		CE81D7AA2B3D5D6200610785 /* SparkTime */ = {
 			isa = PBXGroup;
 			children = (
+				CE81D7BA2B3D5DAC00610785 /* Assets.xcassets */,
+				CE81D7C22B3D5DAD00610785 /* components */,
+				CE81D7CE2B3D5DAD00610785 /* DataManager.swift */,
+				CE81D7BC2B3D5DAD00610785 /* functions */,
+				CE81D7CF2B3D5DAE00610785 /* views */,
 				CE81D7AB2B3D5D6200610785 /* SparkTimeApp.swift */,
-				CE81D7AD2B3D5D6200610785 /* ContentView.swift */,
-				CE81D7AF2B3D5D6400610785 /* Assets.xcassets */,
 				CE81D7B12B3D5D6400610785 /* SparkTime.entitlements */,
 				CE81D7B22B3D5D6400610785 /* Preview Content */,
 			);
@@ -67,6 +104,44 @@
 				CE81D7B32B3D5D6400610785 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CE81D7BC2B3D5DAD00610785 /* functions */ = {
+			isa = PBXGroup;
+			children = (
+				CE81D7BD2B3D5DAD00610785 /* ContactPickerViewController.swift */,
+				CE81D7BE2B3D5DAD00610785 /* SMSGenerator.swift */,
+				CE81D7BF2B3D5DAD00610785 /* extensions.swift */,
+				CE81D7C02B3D5DAD00610785 /* ContactsSelectionView.swift */,
+			);
+			path = functions;
+			sourceTree = "<group>";
+		};
+		CE81D7C22B3D5DAD00610785 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				CE81D7C32B3D5DAD00610785 /* toolbar.swift */,
+				CE81D7C62B3D5DAD00610785 /* AlarmSettingView.swift */,
+				CE81D7C72B3D5DAD00610785 /* customAlarm-2.mp3 */,
+				CE81D7C82B3D5DAD00610785 /* alarm.mp3 */,
+				CE81D7C92B3D5DAD00610785 /* BackButton.swift */,
+				CE81D7CA2B3D5DAD00610785 /* LaunchScreen.swift */,
+				CE81D7CB2B3D5DAD00610785 /* AlarmSound.swift */,
+				CE81D7CD2B3D5DAD00610785 /* customalarm.mp3 */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
+		CE81D7CF2B3D5DAE00610785 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				CE81D7D02B3D5DAE00610785 /* PreViews.swift */,
+				CE81D7D12B3D5DAE00610785 /* EmployeesViews.swift */,
+				CE81D7D22B3D5DAE00610785 /* JobsViews.swift */,
+				CE81D7D32B3D5DAE00610785 /* EmployeeView.swift */,
+				CE81D7D42B3D5DAE00610785 /* ContentView.swift */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,7 +203,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE81D7B42B3D5D6400610785 /* Preview Assets.xcassets in Resources */,
-				CE81D7B02B3D5D6400610785 /* Assets.xcassets in Resources */,
+				CE81D7D52B3D5DAE00610785 /* Assets.xcassets in Resources */,
+				CE81D7E02B3D5DAE00610785 /* customAlarm-2.mp3 in Resources */,
+				CE81D7E62B3D5DAE00610785 /* customalarm.mp3 in Resources */,
+				CE81D7E12B3D5DAE00610785 /* alarm.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,8 +217,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE81D7AE2B3D5D6200610785 /* ContentView.swift in Sources */,
+				CE81D7E32B3D5DAE00610785 /* LaunchScreen.swift in Sources */,
+				CE81D7E92B3D5DAE00610785 /* EmployeesViews.swift in Sources */,
+				CE81D7E42B3D5DAE00610785 /* AlarmSound.swift in Sources */,
 				CE81D7AC2B3D5D6200610785 /* SparkTimeApp.swift in Sources */,
+				CE81D7E82B3D5DAE00610785 /* PreViews.swift in Sources */,
+				CE81D7DC2B3D5DAE00610785 /* toolbar.swift in Sources */,
+				CE81D7E72B3D5DAE00610785 /* DataManager.swift in Sources */,
+				CE81D7EC2B3D5DAE00610785 /* ContentView.swift in Sources */,
+				CE81D7D82B3D5DAE00610785 /* SMSGenerator.swift in Sources */,
+				CE81D7D72B3D5DAE00610785 /* ContactPickerViewController.swift in Sources */,
+				CE81D7DA2B3D5DAE00610785 /* ContactsSelectionView.swift in Sources */,
+				CE81D7EB2B3D5DAE00610785 /* EmployeeView.swift in Sources */,
+				CE81D7D92B3D5DAE00610785 /* extensions.swift in Sources */,
+				CE81D7E22B3D5DAE00610785 /* BackButton.swift in Sources */,
+				CE81D7EA2B3D5DAE00610785 /* JobsViews.swift in Sources */,
+				CE81D7DF2B3D5DAE00610785 /* AlarmSettingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
