@@ -26,21 +26,21 @@ struct PreViews: View {
         dataManager.allSMSs = dataManager.allSMSBodies.joined(separator: "\n\n")
 
        }
-    func retrieveAndFormatContacts() -> String {
-            // Retrieve saved contacts from UserDefaults using your DataManager
-            if let savedContacts = dataManager.retrieveSelectedContacts() {
-                // Extract the first phone number of each contact and join them with a comma
-                let phoneNumbersString = savedContacts.compactMap { contact -> String? in
-                    guard let firstPhoneNumber = contact.phoneNumbers.first?.value.stringValue else {
-                        return nil // Skip contacts without phone numbers
-                    }
-                    return firstPhoneNumber
-                }.joined(separator: ", ")
+	func retrieveAndFormatContacts() -> String {
+		let savedContacts = dataManager.retrieveSelectedContacts()
+		
+		// Extract the first phone number of each contact and join them with a comma
+		let phoneNumbersString = savedContacts.compactMap { contact -> String? in
+			guard let firstPhoneNumber = contact.phoneNumbers.first?.value.stringValue else {
+				return nil // Skip contacts without phone numbers
+			}
+			print("firstphonenumber- \(firstPhoneNumber)")
+			return firstPhoneNumber
+		}.joined(separator: ", ")
+		print("phonenumberString- \(phoneNumbersString)")
 
-                return phoneNumbersString // Return the formatted string
-            }
-            return "" // Return an empty string if there are no saved contacts
-        }
+		return phoneNumbersString // Return the formatted string
+	}
 
     var body: some View {
         let smsURLString = "sms:/open?addresses=\(retrieveAndFormatContacts())&body=\(dataManager.allSMSs)"
@@ -127,10 +127,11 @@ struct PreViews: View {
                     generateSMSBody()
                 }
 				Divider().frame(height: 2.0).background(
-					Color(.gray)
-				).padding(.bottom).ignoresSafeArea()
-            }
-        }.toolbar {MyToolbarItems()}
+					Color("toolbar")
+				).padding(.horizontal, 0)
+			}
+        }
+		.toolbar {MyToolbarItems()}
         .background(Color("Color 7"))
 		.navigationBarBackButtonHidden(true) // Hides the back button
 		.navigationBarHidden(true)
@@ -214,7 +215,9 @@ struct BubbleShape: Shape {
 @available(iOS 17.0, *)
 struct PreViews_Previews: PreviewProvider {
     static var previews: some View {
-        PreViews()
-            .environmentObject(DataManager())
+		NavigationView {
+			PreViews()
+				.environmentObject(DataManager())
+		}
     }
 }

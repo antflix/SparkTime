@@ -3,20 +3,20 @@ import ContactsUI
 
 struct ContactsSelectionView: View {
 	@EnvironmentObject var dataManager: DataManager
-	@State private var selectedContacts: [CNContact]? = []
 	@State private var isContact1PickerPresented = false
 
 	var body: some View {
 		VStack {
 			Capsule()
 				.frame(width: 40, height: 6)
-				.foregroundColor(.secondary)
+				.foregroundColor((.secondary))
 				.padding(.top, 5)
-			if let contacts = selectedContacts, !contacts.isEmpty {
+			Spacer()
+			if !dataManager.selectedContacts.isEmpty {
 				List {
-					ForEach(contacts, id: \.self) { contact in
+					ForEach(dataManager.selectedContacts, id: \.self) { contact in
 						ContactRow(contact: contact) {
-							// Pass the contact to be deleted to the onDelete action
+							// Delete the contact
 							deleteContact(contact)
 						}
 					}
@@ -40,30 +40,21 @@ struct ContactsSelectionView: View {
 					.cornerRadius(8)
 			}
 			.sheet(isPresented: $isContact1PickerPresented) {
-
-				ContactPickerViewController(selectedContacts: $selectedContacts)
-
+				ContactPickerViewController()
 			}
-
-			//
-		}.frame(maxWidth: .infinity)
-			.background(Color("Color 7"))
-			.onAppear {
-				// Retrieve saved contacts from UserDefaults
-				if let savedContacts = dataManager.retrieveSelectedContacts() {
-					self.selectedContacts = savedContacts
-				}
-			}
-
+		}
+		.frame(maxWidth: .infinity)
+		.background(Color("Color 7"))
 	}
 	func deleteContact(_ contact: CNContact) {
-		if let index = selectedContacts?.firstIndex(of: contact) {
-			selectedContacts?.remove(at: index)
-			dataManager.saveSelectedContacts(selectedContacts ?? [])
+		if let index = dataManager.selectedContacts.firstIndex(of: contact) {
+			dataManager.selectedContacts.remove(at: index)
+			// Save changes to UserDefaults if needed
+			dataManager.saveSelectedContacts()
 		}
 	}
 }
-
+	
 struct ContactRow: View {
 	let contact: CNContact
 	let onDelete: () -> Void // No need for onDelete in this context

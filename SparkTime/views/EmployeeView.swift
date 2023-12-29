@@ -20,21 +20,21 @@ struct EmployeeView: View {
     var body: some View {
 		VStack {
 			VStack(spacing: 1) {
-
+				
 				HStack(spacing: 1) {
-
-						BackButton(destination: JobsView(), isActive: $navigateBack).frame(alignment: .leading)
-
+					
+					BackButton(destination: JobsView(), isActive: $navigateBack).frame(alignment: .leading)
+					
 					VStack {
 						Image("3time")
 							.aspectRatio(contentMode: .fit)
 							.symbolRenderingMode(.palette)
 							.font(Font.title.weight(.ultraLight))						.foregroundStyle(Color.white, Color.blue, Color.black)
-
+						
 						Text("Employee Hours").font(Font.custom("Quicksand", size: 30).bold())
 							.frame(maxWidth: .infinity * 0.90, alignment: .center)
 					}
-
+					
 					Button(action: {
 						// Toggle the popover state for this particular row
 						showingPopover.toggle()
@@ -93,67 +93,88 @@ struct EmployeeView: View {
 				.background(Color.blue)
 				.foregroundColor(.white)
 				.font(.headline)
-
-			ScrollView {
-				ForEach(dataManager.employeeNames, id: \.self) { employeeName in
-					EmployeeSelectionRow(
-						name: employeeName, isSelected: selectedEmployees.contains(employeeName)
-					) {
-						if let index = selectedEmployees.firstIndex(of: employeeName) {
-							selectedEmployees.remove(at: index) // Toggle employee selection
-						} else {
-							selectedEmployees.append(employeeName)
+				ZStack {
+					ScrollView {
+						ForEach(dataManager.employeeNames, id: \.self) { employeeName in
+							EmployeeSelectionRow(
+								name: employeeName, isSelected: selectedEmployees.contains(employeeName)
+							) {
+								if let index = selectedEmployees.firstIndex(of: employeeName) {
+									selectedEmployees.remove(at: index) // Toggle employee selection
+								} else {
+									selectedEmployees.append(employeeName)
+								}
+							}
+						}
+					}.scrollDismissesKeyboard(.interactively)
+					
+					
+				}
+				Divider().frame(height: 2.0).background(
+					Color("Color 2")
+				).padding(.horizontal)
+				ZStack(alignment: .bottom) {
+					Picker("Hours Worked", selection: $selectedHours) {
+						ForEach(0 ..< 49, id: \.self) { index in
+							let hours = index / 2
+							let minutes = (index % 2) * 30
+							if minutes == 0 {
+								Text("\(hours) hours")
+									.foregroundColor(Color("Color 3"))
+								
+									.tag(index)
+							} else {
+								Text("\(hours) hours \(minutes) minutes")
+									.foregroundColor(Color("Color 3"))
+									.tag(index)
+							}
 						}
 					}
-				}
-			}.scrollDismissesKeyboard(.interactively)
-
-			Divider().frame(height: 2.0).background(
-				Color("Color 2")
-			).padding(.horizontal)
-
-			Picker("Hours Worked", selection: $selectedHours) {
-				ForEach(0 ..< 49, id: \.self) { index in
-					let hours = index / 2
-					let minutes = (index % 2) * 30
-					if minutes == 0 {
-						Text("\(hours) hours")
-							.foregroundColor(Color("Color 3"))
-
-							.tag(index)
-					} else {
-						Text("\(hours) hours \(minutes) minutes")
-							.foregroundColor(Color("Color 3"))
-							.tag(index)
+					.disabled(!isEmployeeComplete)
+					.opacity(isEmployeeComplete ? 1.0 : 0.5) // Adjust opacity based on the selection status
+					.pickerStyle(WheelPickerStyle())
+					.labelsHidden()
+					.onChange(of: selectedHours) { newValue in
+						let hours = newValue / 2
+						let minutes = (newValue % 2) * 30
+						var userSelectedHours = ""
+						if minutes == 0 {
+							userSelectedHours = "\(hours) hours"
+						} else {
+							userSelectedHours = "\(hours) hours \(minutes) minutes"
+						}
+						
+						for employeeName in selectedEmployees {
+							dataManager.saveEmployeeHours(name: employeeName, hours: userSelectedHours)
+						}
 					}
-				}
-			}
-			.disabled(!isEmployeeComplete)
-			.opacity(isEmployeeComplete ? 1.0 : 0.5) // Adjust opacity based on the selection status
-			.pickerStyle(WheelPickerStyle())
-			.labelsHidden()
-			.onChange(of: selectedHours) { newValue in
-				let hours = newValue / 2
-				let minutes = (newValue % 2) * 30
-				var userSelectedHours = ""
-				if minutes == 0 {
-					userSelectedHours = "\(hours) hours"
-				} else {
-					userSelectedHours = "\(hours) hours \(minutes) minutes"
-				}
-
-				for employeeName in selectedEmployees {
-					dataManager.saveEmployeeHours(name: employeeName, hours: userSelectedHours)
-				}
-			}
-			Divider().frame(height: 2.0).background(
-				Color("Color 2")
-			).padding(.horizontal)
-		}
-//			ZStack {
-
-				VStack {
-					HStack(alignment: .bottom) {
+					//					Divider().frame(height: 2.0).background(
+					//						Color("Color 2")
+					//					).padding(.horizontal)
+					
+					//				ZStack(alignment: .bottom) {
+					//					Picker (){
+					//					}
+					//					HStack{
+					//						NavigationLink(){
+					//							HStack {
+					//							}
+					//						}
+					//						Spacer()
+					//						NavigationLink(){
+					//							HStack {
+					//							}
+					//						}
+					//					}.padding()
+					//						.background(Color.clear) // Semi-transparent background
+					//						.cornerRadius(10)
+					//						.shadow(radius: 5)
+					//						.padding(.horizontal)
+					//						.padding(.bottom, 80)
+					//				}.edgesIgnoringSafeArea(.bottom)
+					
+				
+					HStack() {
 						NavigationLink(destination: EmployeesViews()) {
 							HStack {
 								Image(systemName: "arrow.up")
@@ -173,7 +194,7 @@ struct EmployeeView: View {
 						.ignoresSafeArea()
 						.buttonStyle(PlainButtonStyle())
 						.frame(alignment: .leading)
-
+						
 						Spacer()
 						NavigationLink(destination: PreViews()) {
 							HStack {
@@ -181,25 +202,30 @@ struct EmployeeView: View {
 									.foregroundColor(Color.green)
 									.background(Color.clear)
 									.font(.title2)
-
+								
 								Image(systemName: "arrow.right")
 									.foregroundColor(Color.green)
 									.font(.title2)
 									.background(Color.clear)
-
+								
 							}
 						}  .ignoresSafeArea()
 							.buttonStyle(PlainButtonStyle())
 							.disabled(!isSelectionComplete)
 							.opacity(isSelectionComplete ? 1.0 : 0.5)
 							.frame(alignment: .bottomTrailing)
-
-					}
-
-				Divider().frame(height: 2.0).background(
-					Color("toolbar")
-				)
-
+						
+					}.padding()
+						.background(Color.clear) // Semi-transparent background
+						.cornerRadius(10)
+						.shadow(radius: 5)
+						.padding(.horizontal)
+						.padding(.bottom, 0)
+					
+				}.edgesIgnoringSafeArea(.bottom)
+				Divider().frame(height: 1.0).background(
+					Color(.green)
+				).padding(.vertical, 1)
 			}
         }.background(Color("Color 7"))
             .font(colorScheme == .dark ? .headline : .headline)

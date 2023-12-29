@@ -25,7 +25,7 @@ class DataManager: ObservableObject {
 		}
 	}
 	@Published var alarmNoise: String = "customAlarm-2.mp3"
-
+	@Published var selectedContacts: [CNContact] = []
 	@Published var isAlarmSet: Bool = UserDefaults.standard.bool(forKey: "isAlarmSet")
 
 	init() {
@@ -51,6 +51,10 @@ class DataManager: ObservableObject {
 			self.selectedTime = Date()
 			cancelAlarm()
 		}
+		
+		self.selectedContacts = retrieveSelectedContacts()
+		
+
 	}
 
 	// Dictionary to hold employee hours data
@@ -179,18 +183,40 @@ class DataManager: ObservableObject {
 
 	}
 
-	func saveSelectedContacts(_ contacts: [CNContact]) {
-		let encodedData = try? NSKeyedArchiver.archivedData(withRootObject: contacts, requiringSecureCoding: false)
-		UserDefaults.standard.set(encodedData, forKey: "selectedContactsKey")
+	func saveSelectedContacts() {
+		let contactIdentifiers = self.selectedContacts.map { $0.identifier }
+		UserDefaults.standard.set(contactIdentifiers, forKey: "selectedContactsKey")
+	}
+	func retrieveSelectedContacts() -> [CNContact] {
+		print("retrieved contacts called")
+		guard let identifiers = UserDefaults.standard.object(forKey: "selectedContactsKey") as? [String] else {
+			return []
+		}
+		
+		let store = CNContactStore()
+		var contacts: [CNContact] = []
+		
+		// Request access to the contact store
+		let authorizationStatus = CNContactStore.authorizationStatus(for: .contacts)
+		guard authorizationStatus == .authorized else {
+			// Handle lack of permissions here
+			print("Not authorized to access contacts")
+			return []
+		}
+		
+		// Use predicates to fetch contacts in batches
+		let predicate = CNContact.predicateForContacts(withIdentifiers: identifiers)
+		let keysToFetch = [CNContactGivenNameKey, CNContactFamilyNameKey, CNContactPhoneNumbersKey] as [CNKeyDescriptor]
+		
+		do {
+			contacts = try store.unifiedContacts(matching: predicate, keysToFetch: keysToFetch)
+		} catch {
+			print("Error fetching contacts: \(error)")
+		}
+		
+		return contacts
 	}
 
-	func retrieveSelectedContacts() -> [CNContact]? {
-		if let savedData = UserDefaults.standard.data(forKey: "selectedContactsKey"),
-		   let decodedContacts = try? NSKeyedUnarchiver.unarchivedObject(ofClasses: [NSArray.self, CNContact.self], from: savedData) as? [CNContact] {
-			return decodedContacts
-		}
-		return nil
-	}
 
 	func deleteSelectedContacts() {
 		UserDefaults.standard.removeObject(forKey: "selectedContactsKey")

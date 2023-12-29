@@ -21,22 +21,26 @@ struct MyToolbarItems: ToolbarContent {
 	// make the default setting darkmode
 	// Your toolbar items go here
 	var body: some ToolbarContent {
+		
 		ToolbarItemGroup(placement: .bottomBar) {
+			
 			VStack {
+				
 				HStack {
-					HStack {
-						Button(action: {
-							isContactsPresented.toggle()
-						}) {
-							if let contacts = selectedContacts, !contacts.isEmpty {
+					
+						HStack {
+							Button(action: {
+								isContactsPresented.toggle()
+							}) {
+								if !dataManager.selectedContacts.isEmpty {
+								
 								Image(systemName: "person.fill.badge.plus")
 									.font(Font.custom("Quicksand", size: 24).bold())
 									.aspectRatio(contentMode: .fit)
 									.symbolRenderingMode(.palette)
+								
 									.foregroundStyle(Color.green, Color.blue)
-									.popover(isPresented: $isContactsPresented, arrowEdge: .top) {
-										ContactsSelectionView().environmentObject(DataManager())                    .environmentObject(dataManager)
-									}
+									
 							} else {
 								Image(systemName: "person.fill.questionmark")
 									.font(Font.custom("Quicksand", size: 24).bold())
@@ -47,18 +51,13 @@ struct MyToolbarItems: ToolbarContent {
 
 									.foregroundStyle(Color.red, Color.blue)
 									.symbolEffect(.variableColor.reversing.cumulative, options: .repeat(100).speed(1), value: symbolAnimation)
-									.popover(isPresented: $isContactsPresented, arrowEdge: .top) {
-										ContactsSelectionView().environmentObject(DataManager())                    .environmentObject(dataManager)
-									}
+									
 							}
-
+							}
+							.popover(isPresented: $isContactsPresented, arrowEdge: .top) {
+								ContactsSelectionView().environmentObject(dataManager)
+							}
 						}
-					}.onAppear {
-						// Retrieve saved contacts from UserDefaults
-						if let savedContacts = dataManager.retrieveSelectedContacts() {
-							self.selectedContacts = savedContacts
-						}
-					}
 					//            }
 					Spacer()
 					HStack {
@@ -136,7 +135,8 @@ struct MyToolbarItems: ToolbarContent {
 						}
 					}
 				}
-			}.ignoresSafeArea(edges: .bottom)
+			}
+
 		}
 	}
 }

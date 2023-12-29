@@ -30,10 +30,27 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
 		
 		// Set the AppDelegate as the delegate for UNUserNotificationCenter
 		UNUserNotificationCenter.current().delegate = self
+		requestContactsAccess()
 		
 		return true
 	}
-	
+	private func requestContactsAccess() {
+		let store = CNContactStore()
+		store.requestAccess(for: .contacts) { granted, error in
+			if let error = error {
+				print("Error requesting contacts access: \(error)")
+				return
+			}
+			
+			if granted {
+				print("Contacts access granted")
+				// You can now access contacts
+			} else {
+				print("Contacts access denied")
+				// Handle the case where permission is denied
+			}
+		}
+	}
 	// Handle the notification when the app is in the foreground
 	func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
 		print(" \(notification.request.identifier) triggered")
@@ -80,9 +97,10 @@ struct SparkTimeApp: App {
 	var body: some Scene {
 		WindowGroup {
 			if showSplash {
-				LaunchScreen()
+				TriangleLoader()
+					.colorScheme(.dark)
 					.onAppear {
-						DispatchQueue.main.asyncAfter(deadline: .now() + 2) { // Adjust the duration (e.g., 2 seconds)
+						DispatchQueue.main.asyncAfter(deadline: .now() + 3) { // Adjust the duration (e.g., 2 seconds)
 							withAnimation {
 								showSplash = false // Hide the splash screen after delay
 							}

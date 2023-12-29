@@ -3,10 +3,9 @@ import ContactsUI
 
 struct ContactPickerViewController: UIViewControllerRepresentable {
 	@EnvironmentObject var dataManager: DataManager
-	@Binding var selectedContacts: [CNContact]? // Update to accept an optional array
-
+	
 	func makeCoordinator() -> Coordinator {
-		Coordinator(dataManager: dataManager, selectedContacts: $selectedContacts)
+		Coordinator(dataManager: dataManager)
 	}
 	func makeUIViewController(context: Context) -> CNContactPickerViewController {
 		let picker = CNContactPickerViewController()
@@ -18,22 +17,56 @@ struct ContactPickerViewController: UIViewControllerRepresentable {
 
 	class Coordinator: NSObject, CNContactPickerDelegate {
 		var dataManager: DataManager
-		var selectedContacts: Binding<[CNContact]?> // Change the type to accept optional binding
-
-		init(dataManager: DataManager, selectedContacts: Binding<[CNContact]?>) {
+		
+		init(dataManager: DataManager) {
 			self.dataManager = dataManager
-			self.selectedContacts = selectedContacts // Assign the binding directly
 		}
-
+		
 		func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
-			if var contacts = selectedContacts.wrappedValue {
-				contacts.append(contact)
-				print("\(contacts)")
-				selectedContacts.wrappedValue = contacts
-
+			// Check if the contact is already selected
+			if !dataManager.selectedContacts.contains(where: { $0.identifier == contact.identifier }) {
+				dataManager.selectedContacts.append(contact)
+				
 				// Save the contacts immediately upon selection
-				dataManager.saveSelectedContacts(contacts)
+				dataManager.saveSelectedContacts()
 			}
 		}
+	}
+}
+
+
+struct CustomContactPickerView: UIViewControllerRepresentable {
+	class Coordinator: NSObject, CNContactPickerDelegate {
+		// Implement delegate methods here
+		func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
+			// Handle contact selection
+		}
+		
+		func contactPickerDidCancel(_ picker: CNContactPickerViewController) {
+			// Handle cancellation
+		}
+	}
+	
+	func makeCoordinator() -> Coordinator {
+		Coordinator()
+	}
+	
+	func makeUIViewController(context: Context) -> CNContactPickerViewController {
+		let picker = CNContactPickerViewController()
+		picker.delegate = context.coordinator
+		
+		// Customization Example: Showing only phone numbers
+		picker.displayedPropertyKeys = [CNContactPhoneNumbersKey]
+		
+		return picker
+	}
+	
+	func updateUIViewController(_ uiViewController: CNContactPickerViewController, context: Context) {
+		// Update the controller if needed
+	}
+}
+struct ContactPickerView_Previews: PreviewProvider {
+	static var previews: some View {
+		CustomContactPickerView()
 	}
 }

@@ -1,4 +1,5 @@
 import SwiftUI
+import SwiftfulLoadingIndicators
 
 @available(iOS 17.0, *)
 struct EmployeesViews: View {
@@ -81,7 +82,7 @@ struct EmployeesViews: View {
 				.foregroundColor(.white)
 				.font(.headline)
 			}
-			VStack {
+			ZStack(alignment: .bottom) {
 				ScrollView {
 
 					ForEach(dataManager.employeeNames, id: \.self) { name in
@@ -92,34 +93,39 @@ struct EmployeesViews: View {
 					}
 				}.scrollDismissesKeyboard(.immediately)
 
-				VStack {
-					HStack {
-						Spacer()
-						NavigationLink(destination: PreViews()) {
-							HStack {
-								Text("Next")
-									.foregroundColor(Color.green)
-									.background(Color.clear)
-									.font(.title)
-
-								Image(systemName: "arrow.right")
-									.foregroundColor(Color.green)
-									.font(.title)
-									.background(Color.clear)
-									.font(.title)
-
-							}
-						}  .ignoresSafeArea()
-							.buttonStyle(PlainButtonStyle())
-							.disabled(!isAnyEmployeeAssignedHours)
-							.opacity(isAnyEmployeeAssignedHours ? 1.0 : 0.5)
-							.frame(alignment: .bottomTrailing)
-
+				
+				HStack {
+					Spacer()
+					NavigationLink(destination: PreViews()) {
+						HStack {
+							Text("Next")
+								.foregroundColor(Color.green)
+								.background(Color.clear)
+								.font(.title)
+							
+							Image(systemName: "arrow.right")
+								.foregroundColor(Color.green)
+								.font(.title)
+								.background(Color.clear)
+								.font(.title)
+							
+						}
 					}
-					Divider().frame(height: 2.0).background(
-						Color(.gray)
-					).padding(.bottom).ignoresSafeArea()
-				}
+						.buttonStyle(PlainButtonStyle())
+						.disabled(!isAnyEmployeeAssignedHours)
+						.opacity(isAnyEmployeeAssignedHours ? 1.0 : 0.5)
+						.frame(alignment: .bottomTrailing)
+						.padding()
+						.background(Color.clear) // Semi-transparent background
+						
+						.shadow(radius: 5)
+						.padding(.horizontal)
+						.padding(.bottom, 0)
+					
+				}.edgesIgnoringSafeArea(.bottom)
+					
+				
+				
 
 			}.toolbar {MyToolbarItems()}
 				.background(Color("Color 7"))
@@ -200,9 +206,11 @@ struct EmployeeRowView: View {
     }
 }
 
+
 @available(iOS 17.0, *)
 struct EmployeesViews_Previews: PreviewProvider {
 	static var previews: some View {
+		
 		NavigationStack {
 			EmployeesViews()
 				.environmentObject(DataManager())
