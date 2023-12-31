@@ -14,13 +14,16 @@ struct PreViews: View {
     @EnvironmentObject var dataManager: DataManager
     // To save the formatted data for later use:
     @State private var savedData: String = "" // State variable to store the formatted data
-
+	@State private var navigateBack = false
     func generateSMSBody() {
         let sortedOutput = SMSGenerator.sortedFormat(dataManager: dataManager)
         let smsBodyWithDate = SMSGenerator.generateSMSURL(
             sortedOutput: sortedOutput)
         // Append the generated SMS body to the array
-        dataManager.allSMSBodies.append(smsBodyWithDate)
+		if dataManager.allSMSBodies.last != smsBodyWithDate {
+			dataManager.allSMSBodies.append(smsBodyWithDate)
+		}
+//        dataManager.allSMSBodies.append(smsBodyWithDate)
 
         // Update savedData to show all stored SMS bodies
         dataManager.allSMSs = dataManager.allSMSBodies.joined(separator: "\n\n")
@@ -48,6 +51,25 @@ struct PreViews: View {
         //      let deviceBg = #colorLiteral(red: 0, green: 0.3725490196, blue: 1, alpha: 1)
         return VStack {
 			HStack {
+				
+						Button(action: {
+							// Call the function here
+							dataManager.clearSMS()
+							
+							// Navigate to the second view
+							navigateBack = true
+						}) {
+							Image(systemName: "arrow.left")
+								.foregroundColor(.white)
+								.buttonStyle(PlainButtonStyle())
+						}
+						
+						NavigationLink(destination: EmployeesViews(), isActive: $navigateBack) {
+							EmptyView()
+						}
+					
+				
+				
 				Text("Text Preview").font(Font.custom("Quicksand", size: 30).bold())
 					.frame(maxWidth: .infinity * 0.90, alignment: .center)
 			}

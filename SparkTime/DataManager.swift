@@ -115,6 +115,10 @@ class DataManager: ObservableObject {
 			}
 		}
 	}
+	func clearSMS() {
+		dataManager.allSMSBodies.removeLast()
+
+	}
 	func persistentAlarm(soundName: String) {
 		print("persistent alarm function")
 		print("isAlarmSet: \(isAlarmSet)")

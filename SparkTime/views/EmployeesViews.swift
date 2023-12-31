@@ -138,6 +138,8 @@ struct EmployeesViews: View {
 						window.rootViewController?.overrideUserInterfaceStyle = newValue ? .dark : .light
 					}
 				}
+		}  .onAppear {
+			
 		}
 	}
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE72CC2E2B40F71C00290E59 /* MaterialListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72CC2D2B40F71C00290E59 /* MaterialListView.swift */; };
 		CE81D7AC2B3D5D6200610785 /* SparkTimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81D7AB2B3D5D6200610785 /* SparkTimeApp.swift */; };
 		CE81D7B42B3D5D6400610785 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE81D7B32B3D5D6400610785 /* Preview Assets.xcassets */; };
 		CE81D7D52B3D5DAE00610785 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE81D7BA2B3D5DAC00610785 /* Assets.xcassets */; };
@@ -31,9 +32,11 @@
 		CE81D7EE2B3D9CEA00610785 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE81D7ED2B3D9CEA00610785 /* Media.xcassets */; };
 		CE81D7F12B3E676E00610785 /* SwiftfulLoadingIndicators in Frameworks */ = {isa = PBXBuildFile; productRef = CE81D7F02B3E676E00610785 /* SwiftfulLoadingIndicators */; };
 		CE81D7F32B3E6EC400610785 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81D7F22B3E6EC400610785 /* Triangle.swift */; };
+		CE81F9022B414EDC003F9612 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81F9012B414EDC003F9612 /* StartView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE72CC2D2B40F71C00290E59 /* MaterialListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialListView.swift; sourceTree = "<group>"; };
 		CE81D7A82B3D5D6200610785 /* SparkTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SparkTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE81D7AB2B3D5D6200610785 /* SparkTimeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkTimeApp.swift; sourceTree = "<group>"; };
 		CE81D7B12B3D5D6400610785 /* SparkTime.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SparkTime.entitlements; sourceTree = "<group>"; };
@@ -59,6 +62,7 @@
 		CE81D7D42B3D5DAE00610785 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CE81D7ED2B3D9CEA00610785 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		CE81D7F22B3E6EC400610785 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
+		CE81F9012B414EDC003F9612 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +152,8 @@
 				CE81D7D22B3D5DAE00610785 /* JobsViews.swift */,
 				CE81D7D32B3D5DAE00610785 /* EmployeeView.swift */,
 				CE81D7D42B3D5DAE00610785 /* ContentView.swift */,
+				CE72CC2D2B40F71C00290E59 /* MaterialListView.swift */,
+				CE81F9012B414EDC003F9612 /* StartView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -233,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE81D7E32B3D5DAE00610785 /* LaunchScreen.swift in Sources */,
+				CE81F9022B414EDC003F9612 /* StartView.swift in Sources */,
 				CE81D7E92B3D5DAE00610785 /* EmployeesViews.swift in Sources */,
 				CE81D7E42B3D5DAE00610785 /* AlarmSound.swift in Sources */,
 				CE81D7AC2B3D5D6200610785 /* SparkTimeApp.swift in Sources */,
@@ -245,6 +252,7 @@
 				CE81D7D72B3D5DAE00610785 /* ContactPickerViewController.swift in Sources */,
 				CE81D7DA2B3D5DAE00610785 /* ContactsSelectionView.swift in Sources */,
 				CE81D7EB2B3D5DAE00610785 /* EmployeeView.swift in Sources */,
+				CE72CC2E2B40F71C00290E59 /* MaterialListView.swift in Sources */,
 				CE81D7D92B3D5DAE00610785 /* extensions.swift in Sources */,
 				CE81D7E22B3D5DAE00610785 /* BackButton.swift in Sources */,
 				CE81D7EA2B3D5DAE00610785 /* JobsViews.swift in Sources */,
@@ -402,6 +410,10 @@
 				MACOSX_DEPLOYMENT_TARGET = 14.2;
 				MARKETING_VERSION = 1.0;
 				NEW_SETTING = "";
+				OTHER_LDFLAGS = (
+					"-Xlinker",
+					"-interposable",
+				);
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.antflix.SparkTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -444,6 +456,10 @@
 				MACOSX_DEPLOYMENT_TARGET = 14.2;
 				MARKETING_VERSION = 1.0;
 				NEW_SETTING = "";
+				OTHER_LDFLAGS = (
+					"-Xlinker",
+					"-interposable",
+				);
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.antflix.SparkTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";

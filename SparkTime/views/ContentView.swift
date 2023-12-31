@@ -22,17 +22,23 @@ struct ContentView: View {
     @State private var settingsPopoverAnchor: Anchor<CGRect>?
 
     enum Tab {
-        case jobs, employee, employees, preview
+        case start, material, jobs, employee, employees, preview
     }
 
-    @State private var selectedTab: Tab = .jobs  // Track selected tab
+    @State private var selectedTab: Tab = .start  // Track selected tab
     var body: some View {
           NavigationStack {
               ZStack(alignment: .topTrailing) {
                   switch selectedTab {
+				  case .start:
+					  StartView()
+							  .environmentObject(dataManager)
                   case .jobs:
                       JobsView()
-                  case .employee:
+				  case .material:
+					  MaterialFormView()
+						  .environmentObject(dataManager)
+				  case .employee:
                       EmployeeView()
 //                          .toolbar{MyToolbarItems()}
                           .environmentObject(dataManager)
@@ -171,6 +177,11 @@ struct ContentView_Previews: PreviewProvider {
       PreViews()
         .environmentObject(DataManager())
         .background(Color("Color 2"))
+	  StartView()
+		  .environmentObject(DataManager())
+
+	  MaterialFormView()
+	  .environmentObject(DataManager())
 
 //      SettingsView()
 //          .environmentObject(DataManager())
