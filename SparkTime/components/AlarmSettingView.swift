@@ -57,6 +57,7 @@ struct AlarmSettingView: View {
 		.padding()
 
 	}
+
 	// Function to format time for display
 	private func formattedTime(_ time: Date) -> String {
 		let formatter = DateFormatter()

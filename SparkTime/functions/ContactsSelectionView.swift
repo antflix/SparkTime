@@ -46,6 +46,8 @@ struct ContactsSelectionView: View {
 		.frame(maxWidth: .infinity)
 		.background(Color("Color 7"))
 	}
+
+	
 	func deleteContact(_ contact: CNContact) {
 		if let index = dataManager.selectedContacts.firstIndex(of: contact) {
 			dataManager.selectedContacts.remove(at: index)
@@ -73,6 +75,8 @@ struct ContactRow: View {
 			}
 		}
 	}
+
+
 }
 #Preview {
 	ContactsSelectionView()

@@ -2,10 +2,14 @@ import SwiftUI
 import UserNotifications
 import ContactsUI
 import AVFoundation
-
 class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 	let dataManager = DataManager.shared // Change this line
-	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
+	
+	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions:
+	
+					
+	
+	[UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
 		UNUserNotificationCenter.current().getPendingNotificationRequests { requests in
 			for request in requests {
 				print("Activating: \(request.identifier)")
@@ -31,6 +35,7 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
 		// Set the AppDelegate as the delegate for UNUserNotificationCenter
 		UNUserNotificationCenter.current().delegate = self
 		requestContactsAccess()
+		
 		
 		return true
 	}
@@ -87,6 +92,7 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
 	}
 }
 
+import Combine
 let dataManager = DataManager.shared // Change this line
 @available(iOS 17.0, *)
 @main
@@ -98,7 +104,7 @@ struct SparkTimeApp: App {
 		WindowGroup {
 			if showSplash {
 				TriangleLoader()
-					.colorScheme(.dark)
+//					.colorScheme(.light)
 					.onAppear {
 						DispatchQueue.main.asyncAfter(deadline: .now() + 3) { // Adjust the duration (e.g., 2 seconds)
 							withAnimation {
@@ -108,9 +114,20 @@ struct SparkTimeApp: App {
 					}
 			} else {
 				ContentView()
-					.environmentObject(dataManager) // Inject the EnvironmentObject
+					.environmentObject(dataManager) 
 			}
 		}
 	}
 }
 
+struct Blur: UIViewRepresentable {
+	var style: UIBlurEffect.Style = .systemThinMaterial
+	
+	func makeUIView(context: UIViewRepresentableContext<Blur>) -> UIVisualEffectView {
+		return UIVisualEffectView(effect: UIBlurEffect(style: style))
+	}
+	
+	func updateUIView(_ uiView: UIVisualEffectView, context: UIViewRepresentableContext<Blur>) {
+		uiView.effect = UIBlurEffect(style: style)
+	}
+}

@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE16CFEF2B47C10100BFF5EC /* OutletsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16CFEE2B47C10100BFF5EC /* OutletsView.swift */; };
+		CE1AFC102B433746008FB9E7 /* TESTERVIEW.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1AFC0F2B433746008FB9E7 /* TESTERVIEW.swift */; };
 		CE72CC2E2B40F71C00290E59 /* MaterialListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72CC2D2B40F71C00290E59 /* MaterialListView.swift */; };
+		CE75DAC42B4285F100C1AD81 /* Inject in Frameworks */ = {isa = PBXBuildFile; productRef = CE75DAC32B4285F100C1AD81 /* Inject */; };
+		CE75DB232B4290CC00C1AD81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE75DB222B4290CB00C1AD81 /* Assets.xcassets */; };
 		CE81D7AC2B3D5D6200610785 /* SparkTimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81D7AB2B3D5D6200610785 /* SparkTimeApp.swift */; };
 		CE81D7B42B3D5D6400610785 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE81D7B32B3D5D6400610785 /* Preview Assets.xcassets */; };
-		CE81D7D52B3D5DAE00610785 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE81D7BA2B3D5DAC00610785 /* Assets.xcassets */; };
 		CE81D7D72B3D5DAE00610785 /* ContactPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81D7BD2B3D5DAD00610785 /* ContactPickerViewController.swift */; };
 		CE81D7D82B3D5DAE00610785 /* SMSGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81D7BE2B3D5DAD00610785 /* SMSGenerator.swift */; };
 		CE81D7D92B3D5DAE00610785 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81D7BF2B3D5DAD00610785 /* extensions.swift */; };
@@ -19,7 +22,6 @@
 		CE81D7DF2B3D5DAE00610785 /* AlarmSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81D7C62B3D5DAD00610785 /* AlarmSettingView.swift */; };
 		CE81D7E02B3D5DAE00610785 /* customAlarm-2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE81D7C72B3D5DAD00610785 /* customAlarm-2.mp3 */; };
 		CE81D7E12B3D5DAE00610785 /* alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE81D7C82B3D5DAD00610785 /* alarm.mp3 */; };
-		CE81D7E22B3D5DAE00610785 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81D7C92B3D5DAD00610785 /* BackButton.swift */; };
 		CE81D7E32B3D5DAE00610785 /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81D7CA2B3D5DAD00610785 /* LaunchScreen.swift */; };
 		CE81D7E42B3D5DAE00610785 /* AlarmSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81D7CB2B3D5DAD00610785 /* AlarmSound.swift */; };
 		CE81D7E62B3D5DAE00610785 /* customalarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE81D7CD2B3D5DAD00610785 /* customalarm.mp3 */; };
@@ -33,15 +35,19 @@
 		CE81D7F12B3E676E00610785 /* SwiftfulLoadingIndicators in Frameworks */ = {isa = PBXBuildFile; productRef = CE81D7F02B3E676E00610785 /* SwiftfulLoadingIndicators */; };
 		CE81D7F32B3E6EC400610785 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81D7F22B3E6EC400610785 /* Triangle.swift */; };
 		CE81F9022B414EDC003F9612 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81F9012B414EDC003F9612 /* StartView.swift */; };
+		CE96D86C2B42B72C00764C6F /* NewProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96D86B2B42B72C00764C6F /* NewProject.swift */; };
+		CEDEE6BA2B4A297B00E4B074 /* materials.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDEE6B92B4A297B00E4B074 /* materials.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE16CFEE2B47C10100BFF5EC /* OutletsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletsView.swift; sourceTree = "<group>"; };
+		CE1AFC0F2B433746008FB9E7 /* TESTERVIEW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TESTERVIEW.swift; sourceTree = "<group>"; };
 		CE72CC2D2B40F71C00290E59 /* MaterialListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialListView.swift; sourceTree = "<group>"; };
+		CE75DB222B4290CB00C1AD81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE81D7A82B3D5D6200610785 /* SparkTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SparkTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE81D7AB2B3D5D6200610785 /* SparkTimeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkTimeApp.swift; sourceTree = "<group>"; };
 		CE81D7B12B3D5D6400610785 /* SparkTime.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SparkTime.entitlements; sourceTree = "<group>"; };
 		CE81D7B32B3D5D6400610785 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		CE81D7BA2B3D5DAC00610785 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../Time Turner-Inner 3.0/Time Turner-Inner 3.0/Assets.xcassets"; sourceTree = "<group>"; };
 		CE81D7BD2B3D5DAD00610785 /* ContactPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactPickerViewController.swift; sourceTree = "<group>"; };
 		CE81D7BE2B3D5DAD00610785 /* SMSGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMSGenerator.swift; sourceTree = "<group>"; };
 		CE81D7BF2B3D5DAD00610785 /* extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
@@ -50,7 +56,6 @@
 		CE81D7C62B3D5DAD00610785 /* AlarmSettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmSettingView.swift; sourceTree = "<group>"; };
 		CE81D7C72B3D5DAD00610785 /* customAlarm-2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "customAlarm-2.mp3"; sourceTree = "<group>"; };
 		CE81D7C82B3D5DAD00610785 /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm.mp3; sourceTree = "<group>"; };
-		CE81D7C92B3D5DAD00610785 /* BackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		CE81D7CA2B3D5DAD00610785 /* LaunchScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
 		CE81D7CB2B3D5DAD00610785 /* AlarmSound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmSound.swift; sourceTree = "<group>"; };
 		CE81D7CD2B3D5DAD00610785 /* customalarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = customalarm.mp3; sourceTree = "<group>"; };
@@ -63,6 +68,8 @@
 		CE81D7ED2B3D9CEA00610785 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		CE81D7F22B3E6EC400610785 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		CE81F9012B414EDC003F9612 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		CE96D86B2B42B72C00764C6F /* NewProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProject.swift; sourceTree = "<group>"; };
+		CEDEE6B92B4A297B00E4B074 /* materials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = materials.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +78,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE81D7F12B3E676E00610785 /* SwiftfulLoadingIndicators in Frameworks */,
+				CE75DAC42B4285F100C1AD81 /* Inject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +88,7 @@
 		CE81D79F2B3D5D6200610785 = {
 			isa = PBXGroup;
 			children = (
+				CE75DB222B4290CB00C1AD81 /* Assets.xcassets */,
 				CE81D7AA2B3D5D6200610785 /* SparkTime */,
 				CE81D7A92B3D5D6200610785 /* Products */,
 			);
@@ -96,7 +105,6 @@
 		CE81D7AA2B3D5D6200610785 /* SparkTime */ = {
 			isa = PBXGroup;
 			children = (
-				CE81D7BA2B3D5DAC00610785 /* Assets.xcassets */,
 				CE81D7C22B3D5DAD00610785 /* components */,
 				CE81D7CE2B3D5DAD00610785 /* DataManager.swift */,
 				CE81D7BC2B3D5DAD00610785 /* functions */,
@@ -105,6 +113,7 @@
 				CE81D7B12B3D5D6400610785 /* SparkTime.entitlements */,
 				CE81D7B22B3D5D6400610785 /* Preview Content */,
 				CE81D7ED2B3D9CEA00610785 /* Media.xcassets */,
+				CE1AFC0F2B433746008FB9E7 /* TESTERVIEW.swift */,
 			);
 			path = SparkTime;
 			sourceTree = "<group>";
@@ -135,11 +144,11 @@
 				CE81D7C62B3D5DAD00610785 /* AlarmSettingView.swift */,
 				CE81D7C72B3D5DAD00610785 /* customAlarm-2.mp3 */,
 				CE81D7C82B3D5DAD00610785 /* alarm.mp3 */,
-				CE81D7C92B3D5DAD00610785 /* BackButton.swift */,
 				CE81D7CA2B3D5DAD00610785 /* LaunchScreen.swift */,
 				CE81D7CB2B3D5DAD00610785 /* AlarmSound.swift */,
 				CE81D7CD2B3D5DAD00610785 /* customalarm.mp3 */,
 				CE81D7F22B3E6EC400610785 /* Triangle.swift */,
+				CEDEE6B92B4A297B00E4B074 /* materials.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -149,11 +158,13 @@
 			children = (
 				CE81D7D02B3D5DAE00610785 /* PreViews.swift */,
 				CE81D7D12B3D5DAE00610785 /* EmployeesViews.swift */,
-				CE81D7D22B3D5DAE00610785 /* JobsViews.swift */,
 				CE81D7D32B3D5DAE00610785 /* EmployeeView.swift */,
+				CE81D7D22B3D5DAE00610785 /* JobsViews.swift */,
 				CE81D7D42B3D5DAE00610785 /* ContentView.swift */,
 				CE72CC2D2B40F71C00290E59 /* MaterialListView.swift */,
 				CE81F9012B414EDC003F9612 /* StartView.swift */,
+				CE96D86B2B42B72C00764C6F /* NewProject.swift */,
+				CE16CFEE2B47C10100BFF5EC /* OutletsView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -176,6 +187,7 @@
 			name = SparkTime;
 			packageProductDependencies = (
 				CE81D7F02B3E676E00610785 /* SwiftfulLoadingIndicators */,
+				CE75DAC32B4285F100C1AD81 /* Inject */,
 			);
 			productName = SparkTime;
 			productReference = CE81D7A82B3D5D6200610785 /* SparkTime.app */;
@@ -207,6 +219,7 @@
 			mainGroup = CE81D79F2B3D5D6200610785;
 			packageReferences = (
 				CE81D7EF2B3E676D00610785 /* XCRemoteSwiftPackageReference "SwiftfulLoadingIndicators" */,
+				CE75DAC22B4285F100C1AD81 /* XCRemoteSwiftPackageReference "Inject" */,
 			);
 			productRefGroup = CE81D7A92B3D5D6200610785 /* Products */;
 			projectDirPath = "";
@@ -223,7 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE81D7B42B3D5D6400610785 /* Preview Assets.xcassets in Resources */,
-				CE81D7D52B3D5DAE00610785 /* Assets.xcassets in Resources */,
+				CE75DB232B4290CC00C1AD81 /* Assets.xcassets in Resources */,
 				CE81D7E02B3D5DAE00610785 /* customAlarm-2.mp3 in Resources */,
 				CE81D7E62B3D5DAE00610785 /* customalarm.mp3 in Resources */,
 				CE81D7EE2B3D9CEA00610785 /* Media.xcassets in Resources */,
@@ -242,7 +255,9 @@
 				CE81F9022B414EDC003F9612 /* StartView.swift in Sources */,
 				CE81D7E92B3D5DAE00610785 /* EmployeesViews.swift in Sources */,
 				CE81D7E42B3D5DAE00610785 /* AlarmSound.swift in Sources */,
+				CE96D86C2B42B72C00764C6F /* NewProject.swift in Sources */,
 				CE81D7AC2B3D5D6200610785 /* SparkTimeApp.swift in Sources */,
+				CEDEE6BA2B4A297B00E4B074 /* materials.swift in Sources */,
 				CE81D7F32B3E6EC400610785 /* Triangle.swift in Sources */,
 				CE81D7E82B3D5DAE00610785 /* PreViews.swift in Sources */,
 				CE81D7DC2B3D5DAE00610785 /* toolbar.swift in Sources */,
@@ -251,10 +266,11 @@
 				CE81D7D82B3D5DAE00610785 /* SMSGenerator.swift in Sources */,
 				CE81D7D72B3D5DAE00610785 /* ContactPickerViewController.swift in Sources */,
 				CE81D7DA2B3D5DAE00610785 /* ContactsSelectionView.swift in Sources */,
+				CE1AFC102B433746008FB9E7 /* TESTERVIEW.swift in Sources */,
 				CE81D7EB2B3D5DAE00610785 /* EmployeeView.swift in Sources */,
 				CE72CC2E2B40F71C00290E59 /* MaterialListView.swift in Sources */,
+				CE16CFEF2B47C10100BFF5EC /* OutletsView.swift in Sources */,
 				CE81D7D92B3D5DAE00610785 /* extensions.swift in Sources */,
-				CE81D7E22B3D5DAE00610785 /* BackButton.swift in Sources */,
 				CE81D7EA2B3D5DAE00610785 /* JobsViews.swift in Sources */,
 				CE81D7DF2B3D5DAE00610785 /* AlarmSettingView.swift in Sources */,
 			);
@@ -405,15 +421,13 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_QUOTE_LINKER_ARGUMENTS_FOR_COMPILER_DRIVER = YES;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.2;
 				MARKETING_VERSION = 1.0;
 				NEW_SETTING = "";
-				OTHER_LDFLAGS = (
-					"-Xlinker",
-					"-interposable",
-				);
+				OTHER_LDFLAGS = "";
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.antflix.SparkTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -451,15 +465,13 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_QUOTE_LINKER_ARGUMENTS_FOR_COMPILER_DRIVER = YES;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.2;
 				MARKETING_VERSION = 1.0;
 				NEW_SETTING = "";
-				OTHER_LDFLAGS = (
-					"-Xlinker",
-					"-interposable",
-				);
+				OTHER_LDFLAGS = "";
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.antflix.SparkTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -495,6 +507,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		CE75DAC22B4285F100C1AD81 /* XCRemoteSwiftPackageReference "Inject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/krzysztofzablocki/Inject.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.4;
+			};
+		};
 		CE81D7EF2B3E676D00610785 /* XCRemoteSwiftPackageReference "SwiftfulLoadingIndicators" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftfulThinking/SwiftfulLoadingIndicators.git";
@@ -506,6 +526,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		CE75DAC32B4285F100C1AD81 /* Inject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE75DAC22B4285F100C1AD81 /* XCRemoteSwiftPackageReference "Inject" */;
+			productName = Inject;
+		};
 		CE81D7F02B3E676E00610785 /* SwiftfulLoadingIndicators */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CE81D7EF2B3E676D00610785 /* XCRemoteSwiftPackageReference "SwiftfulLoadingIndicators" */;

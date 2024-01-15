@@ -222,7 +222,12 @@ struct ProfileInfoView: View {
         .cornerRadius(10)
         .shadow(radius: 5)
         .padding()
+        .enableInjection()
     }
+
+    #if DEBUG
+    @ObserveInjection var forceRedraw
+    #endif
 }
 
 struct ContactCardView: View {
@@ -266,7 +271,12 @@ struct ContactCardView: View {
         .cornerRadius(10)
         .shadow(radius: 5)
         .padding()
+        .enableInjection()
     }
+
+    #if DEBUG
+    @ObserveInjection var forceRedraw
+    #endif
 }
 
 @available(iOS 17.0, *)

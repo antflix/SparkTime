@@ -15,116 +15,136 @@
 import SwiftUI
 import SwiftUI
 import SwiftUI
-
 @available(iOS 17.0, *)
 struct StartView: View {
 	
 	var body: some View {
-		
 		VStack {
-			// Header
-			Text("SparkList")
-				.font(.largeTitle)
-				.padding()
-			Text("The best apprentice you'll ever hire.")
-				.font(.subheadline)
-				.padding(.bottom)
-			//				AnimatedGradientDivider()
-		}
-		// Buttons for different options
-		VStack {
-			NavigationLink(destination: MaterialFormView()) {
-				Text("Create Project")
-					.foregroundStyle(Color.white)
-					.padding(.top, 20)
-					.padding(.bottom, 20)
-					.frame(maxWidth: .infinity, alignment: .center)
-					.background(Color("button1"))
-					.cornerRadius(5)
-					.shadow(color: .black.opacity(0.1), radius: 2, x: 0, y: 2)
+			VStack {
+				// Header
+				Text("Sparklist")
+					.font(.largeTitle)
+					.padding()
+					.foregroundStyle(Color("Color 6"))
+				Text("The best apprentace")
+					.font(.subheadline)
+					.padding(.bottom)
+					.foregroundStyle(Color("Color 6"))
+				Divider()
+
+				//				AnimatedGradientDivider()
+			}
+			// Buttons for different options
+			Spacer()
+			VStack {
+				Spacer()
+				NavigationLink(destination: MaterialListView()) {
+					Text("Generate Material List")
+						.foregroundStyle(Color.white)
+						.padding(.top, 20)
+						.padding(.bottom, 20)
+						.frame(maxWidth: .infinity, alignment: .center)
+						.background(Color("button1"))
+						.cornerRadius(5)
+						.shadow(color: .black.opacity(0.1), radius: 2, x: 0, y: 2)
+					
+				}
+				.buttonStyle(PlainButtonStyle())
+
+				.padding(.horizontal, 0)
+				.padding(.top, 0)
+				.padding(.bottom, 5)
+				.frame(maxWidth: .infinity, alignment: .topLeading)
 				
-			}
-			
-			.padding(.horizontal, 0)
-			.padding(.top, 0)
-			.padding(.bottom, 5)
-			.frame(maxWidth: .infinity, alignment: .topLeading)
-			
-			Button(action: {
-				// Action for View or Edit Existing Project
-			}) {
-				Text("View")
-					.foregroundStyle(Color.white)
-					.padding(.top, 20)
-					.padding(.bottom, 20)
-					.frame(maxWidth: .infinity, alignment: .center)
-					.background(Color("button2"))
-					.cornerRadius(5)
-					.shadow(color: .black.opacity(0.1), radius: 2, x: 0, y: 2)
-			}
-			.padding(.horizontal, 0)
-			.padding(.top, 0)
-			.padding(.bottom, 5)
-			.frame(maxWidth: .infinity, alignment: .topLeading)
-			Button(action: {
-				// Action for Quick Material List
-			}) {
-				Text("Quick ")
-					.foregroundStyle(Color.white)
-					.padding(.top, 20)
-					.padding(.bottom, 20)
-					.frame(maxWidth: .infinity, alignment: .center)
-					.background(Color("button3"))
-					.cornerRadius(5)
-					.shadow(color: .black.opacity(0.1), radius: 2, x: 0, y: 2)
+				Button(action: {
+					// Action for View or Edit Existing Project
+				}) {
+					Text("View/Edit Project")
+						.foregroundStyle(Color.white)
+						.padding(.top, 20)
+						.padding(.bottom, 20)
+						.frame(maxWidth: .infinity, alignment: .center)
+						.background(Color("button2"))
+						.cornerRadius(5)
+						.shadow(color: .black.opacity(0.1), radius: 2, x: 0, y: 2)
+				}
+				.buttonStyle(PlainButtonStyle())
+
+				.padding(.horizontal, 0)
+				.padding(.top, 0)
+				.padding(.bottom, 5)
+				.frame(maxWidth: .infinity, alignment: .topLeading)
+				Button(action: {
+					// Action for Quick Material List
+				}) {
+					Text("Quick Material List ")
+						.foregroundStyle(Color.white)
+						.padding(.top, 20)
+						.padding(.bottom, 20)
+						.frame(maxWidth: .infinity, alignment: .center)
+						.background(Color("button3"))
+						.cornerRadius(5)
+						.shadow(color: .black.opacity(0.1), radius: 2, x: 0, y: 2)
+					
+				}
+				.buttonStyle(PlainButtonStyle())
+
+				.padding(.horizontal, 0)
+				.padding(.top, 0)
+				.padding(.bottom, 5)
+				.frame(maxWidth: .infinity, alignment: .topLeading)
 				
-			}
-			.padding(.horizontal, 0)
-			.padding(.top, 0)
-			.padding(.bottom, 5)
-			.frame(maxWidth: .infinity, alignment: .topLeading)
-			
-			Button(action: {
-				// Action for Quick Material List
-			}) {
-				Text("Pipe Bending Calculator")
-					.foregroundStyle(Color.white)
-					.padding(.top, 20)
-					.padding(.bottom, 20)
-					.frame(maxWidth: .infinity, alignment: .center)
-					.background(Color("button1"))
-					.cornerRadius(5)
-					.shadow(color: .black.opacity(0.1), radius: 2, x: 0, y: 2)
+				Button(action: {
+					// Action for Quick Material List
+				}) {
+					Text("Pipe Bending Calculator")
+						.foregroundStyle(Color.white)
+						.padding(.top, 20)
+						.padding(.bottom, 20)
+						.frame(maxWidth: .infinity, alignment: .center)
+						.background(Color("button1"))
+						.cornerRadius(5)
+						.shadow(color: .black.opacity(0.1), radius: 2, x: 0, y: 2)
+					
+				}
+				.buttonStyle(PlainButtonStyle())
+
+				.padding(.horizontal, 0)
+				.padding(.top, 0)
+				.padding(.bottom, 5)
+				.frame(maxWidth: .infinity, alignment: .topLeading)
 				
-			}
-			.padding(.horizontal, 0)
-			.padding(.top, 0)
-			.padding(.bottom, 5)
-			.frame(maxWidth: .infinity, alignment: .topLeading)
-			
-			NavigationLink(destination: JobsView()) {
-				Text("Time Turner-Inner")
-					.foregroundStyle(Color.white)
-					.padding(.top, 20)
-					.padding(.bottom, 20)
-					.frame(maxWidth: .infinity, alignment: .center)
-					.background(Color("button2"))
-					.cornerRadius(5)
-					.shadow(color: .black.opacity(0.1), radius: 2, x: 0, y: 2)
+				NavigationLink(destination: JobsView()) {
+					Text("Time Turner-Inner")
+						.foregroundStyle(Color.white)
+						.padding(.top, 20)
+						.padding(.bottom, 20)
+						.frame(maxWidth: .infinity, alignment: .center)
+						.background(Color("button2"))
+						.cornerRadius(5)
+						.shadow(color: .black.opacity(0.1), radius: 2, x: 0, y: 2)
+					
+				}
+				.buttonStyle(PlainButtonStyle())
+
+				.padding(.horizontal, 0)
+				.padding(.top, 0)
+				.padding(.bottom, 5)
+				.frame(maxWidth: .infinity, alignment: .topLeading)
 				
+				
+				
+				Spacer()
 			}
-			.padding(.horizontal, 0)
-			.padding(.top, 0)
-			.padding(.bottom, 5)
-			.frame(maxWidth: .infinity, alignment: .topLeading)
-			
-			
-			
 			Spacer()
 		}
+		.toolbar { MyToolbarItems() }
 		.padding()
-		.background(Color.black.edgesIgnoringSafeArea(.all))
+			.background(Color("Color 7"))
+		
+		
 	}
+	
 }
 
 

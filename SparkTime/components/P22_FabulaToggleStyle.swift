@@ -33,7 +33,12 @@ public struct P22_FabulaToggleStyle: View {
                 }
             }
         }
+        .enableInjection()
     }
+
+    #if DEBUG
+    @ObserveInjection var forceRedraw
+    #endif
 }
 
 private
@@ -336,7 +341,12 @@ struct FabulaSlider: View {
                 }
             }
         }
+        .enableInjection()
     }
+
+    #if DEBUG
+    @ObserveInjection var forceRedraw
+    #endif
 }
 
 private
@@ -346,7 +356,12 @@ struct FabulaSectionModifier: ViewModifier {
             .font(.callout)
             .foregroundColor(Color.blue.opacity(0.5))
             .frame(height: 32)
+        .enableInjection()
     }
+
+    #if DEBUG
+    @ObserveInjection var forceRedraw
+    #endif
 }
 
 private

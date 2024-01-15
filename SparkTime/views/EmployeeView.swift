@@ -23,7 +23,7 @@ struct EmployeeView: View {
 				
 				HStack(spacing: 1) {
 					
-					BackButton(destination: JobsView(), isActive: $navigateBack).frame(alignment: .leading)
+//					BackButton(destination: JobsView(), isActive: $navigateBack).frame(alignment: .leading)
 					
 					VStack {
 						Image("3time")
@@ -276,7 +276,10 @@ struct EmployeeSelectionRow: View {
         .onTapGesture {
             action() // Perform action when the row is tapped
         }
+        
     }
+
+
 }
 
 @available(iOS 17.0, *)

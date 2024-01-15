@@ -25,7 +25,12 @@ struct GetContact2: View {
                     .buttonStyle(PlainButtonStyle())
 
         }
+        .enableInjection()
     }
+
+    #if DEBUG
+    @ObserveInjection var forceRedraw
+    #endif
 
     class Coordinator: NSObject, CNContactPickerDelegate {
         let parent: GetContact2

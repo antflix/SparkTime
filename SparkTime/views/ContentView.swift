@@ -2,10 +2,11 @@ import MessageUI
 import SwiftUI
 
 struct Job: Codable {
-  let jobId: String
-  let jobName: String
-  let jobDate: String
+    let jobId: String
+    let jobName: String
+    let jobDate: String
 }
+
 @available(iOS 17.0, *)
 struct ContentView: View {
     @StateObject var dataManager = DataManager()
@@ -22,41 +23,51 @@ struct ContentView: View {
     @State private var settingsPopoverAnchor: Anchor<CGRect>?
 
     enum Tab {
-        case start, material, jobs, employee, employees, preview
+        case start, material, jobs, createProject, singleGangView, employee, employees, preview, testView
     }
 
-    @State private var selectedTab: Tab = .start  // Track selected tab
+    @State private var selectedTab: Tab = .start // Track selected tab
     var body: some View {
-          NavigationStack {
-              ZStack(alignment: .topTrailing) {
-                  switch selectedTab {
-				  case .start:
-					  StartView()
-							  .environmentObject(dataManager)
-                  case .jobs:
-                      JobsView()
-				  case .material:
-					  MaterialFormView()
-						  .environmentObject(dataManager)
-				  case .employee:
-                      EmployeeView()
-//                          .toolbar{MyToolbarItems()}
-                          .environmentObject(dataManager)
-                  case .employees:
-                      EmployeesViews()
-//                          .toolbar{MyToolbarItems()}
-                          .environmentObject(dataManager)
-                  case .preview:
-                      PreViews()
-//                          .toolbar{MyToolbarItems()}
-                          .environmentObject(dataManager)
-                  }
+        NavigationStack {
+            ZStack(alignment: .topTrailing) {
+                switch selectedTab {
+                case .start:
+                    StartView()
+                        .environmentObject(dataManager)
+                case .jobs:
+                    JobsView()
 
-              }
-          }
-      }
+                case .createProject:
+                    MaterialListView()
+                        .environmentObject(dataManager)
+                case .singleGangView:
+                    SingleGangView()
+                        .environmentObject(dataManager)
+                case .material:
+                    MaterialFormView()
+                        .environmentObject(dataManager)
+                case .employee:
+                    EmployeeView()
+//                          .toolbar{MyToolbarItems()}
+                        .environmentObject(dataManager)
+                case .employees:
+                    EmployeesViews()
+//                          .toolbar{MyToolbarItems()}
+                        .environmentObject(dataManager)
+                case .preview:
+                    PreViews()
+//                          .toolbar{MyToolbarItems()}
+                        .environmentObject(dataManager)
 
-  }
+                case .testView:
+						OutletCalculatorView()
+                        .environmentObject(dataManager)
+                }
+
+            }
+        }
+    }
+}
 
 //            if isSettingsViewPresented {
 //                GeometryReader { geometry in
@@ -93,11 +104,11 @@ struct ContentView: View {
 //                        )
 //                )
 //        }
-//    
+//
 //
 //    struct SettingsHandleView: View {
 //        @Binding var isSettingsViewPresented: Bool
-//        
+//
 //        var body: some View {
 //            VStack {
 //                Spacer()
@@ -157,34 +168,33 @@ struct ContentView: View {
 //    var body: some View {
 //        ModeToggleButton().background(Color("Color 5"))
 //
-//       
+//
 //    }
 // }
 
 @available(iOS 17.0, *)
 struct ContentView_Previews: PreviewProvider {
-  static var previews: some View {
-    ContentView()
-      .environmentObject(DataManager())
-      .background(Color("Color 2"))
+    static var previews: some View {
+        ContentView()
+            .environmentObject(DataManager())
+            .background(Color("Color 2"))
 
-    EmployeeView()
-      .environmentObject(DataManager())
-      .background(Color("Color 2"))
-      EmployeesViews()
-        .environmentObject(DataManager())
-        .background(Color("Color 2"))
-      PreViews()
-        .environmentObject(DataManager())
-        .background(Color("Color 2"))
-	  StartView()
-		  .environmentObject(DataManager())
+        EmployeeView()
+            .environmentObject(DataManager())
+            .background(Color("Color 2"))
+        EmployeesViews()
+            .environmentObject(DataManager())
+            .background(Color("Color 2"))
+        PreViews()
+            .environmentObject(DataManager())
+            .background(Color("Color 2"))
+        StartView()
+            .environmentObject(DataManager())
 
-	  MaterialFormView()
-	  .environmentObject(DataManager())
+        MaterialFormView()
+            .environmentObject(DataManager())
 
 //      SettingsView()
 //          .environmentObject(DataManager())
-
-  }
+    }
 }

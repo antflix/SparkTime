@@ -77,6 +77,8 @@ struct TriangleLoader: View {
 			}
 		}
 	}
+
+	
 	
 	// MARK:- functions
 	func animate() {

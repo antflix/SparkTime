@@ -18,6 +18,9 @@ struct MyToolbarItems: ToolbarContent {
 	@State private var showJobs = false
 	@State private var isPopoverPresented = false
 	@State private var isContactsPresented = false
+	@State private var isHomePresented = false
+	@State private var isHome = false
+
 	@State private var symbolAnimation = false
 	@State private var selectedContacts: [CNContact]? = []
 	// make the default setting darkmode
@@ -29,20 +32,53 @@ struct MyToolbarItems: ToolbarContent {
 			VStack {
 				
 				HStack {
+					HStack {
 					
-						HStack {
-							Button(action: {
-								isContactsPresented.toggle()
-							}) {
-								if !dataManager.selectedContacts.isEmpty {
+					
+					
+					
+					Button(action: {
+						// Call the function here
+						dataManager.clearAllSMSData()
+						
+						// Navigate to the second view
+						isHomePresented = true
+					}) {
+						Image(systemName: "house")
+							.foregroundStyle(Color.blue)
+							.font(Font.custom("Quicksand", size: 24).bold())
+						
+					}
+					NavigationLink(destination: StartView(), isActive: $isHomePresented) {
+						EmptyView()
+					}
+					.buttonStyle(PlainButtonStyle())
+					
+					.background(Color.green)
+					.bold()
+					.foregroundColor(.white)
+					
+					
+					
+					
+					}.padding()
+			
+					
+					
+					
+					Spacer()
+					HStack {
+						Button(action: {
+							isContactsPresented.toggle()
+						}) {
+							if !dataManager.selectedContacts.isEmpty {
 								
 								Image(systemName: "person.fill.badge.plus")
 									.font(Font.custom("Quicksand", size: 24).bold())
 									.aspectRatio(contentMode: .fit)
 									.symbolRenderingMode(.palette)
-								
 									.foregroundStyle(Color.green, Color.blue)
-									
+								
 							} else {
 								Image(systemName: "person.fill.questionmark")
 									.font(Font.custom("Quicksand", size: 24).bold())
@@ -50,16 +86,16 @@ struct MyToolbarItems: ToolbarContent {
 									.onAppear {
 										symbolAnimation.toggle()
 									}
-
+								
 									.foregroundStyle(Color.red, Color.blue)
 									.symbolEffect(.variableColor.reversing.cumulative, options: .repeat(100).speed(1), value: symbolAnimation)
-									
-							}
-							}
-							.popover(isPresented: $isContactsPresented, arrowEdge: .top) {
-								ContactsSelectionView().environmentObject(dataManager)
+								
 							}
 						}
+						.popover(isPresented: $isContactsPresented, arrowEdge: .top) {
+							ContactsSelectionView().environmentObject(dataManager)
+						}
+					}
 					//            }
 					Spacer()
 					HStack {
@@ -103,9 +139,9 @@ struct MyToolbarItems: ToolbarContent {
 									EmptyView()
 								}
 							)
-					}
+					}.padding()
 						
-						
+					Spacer()
 					Spacer()
 					HStack {
 						if colorScheme == .light {
@@ -117,10 +153,11 @@ struct MyToolbarItems: ToolbarContent {
 								.font(.title2)
 
 								.foregroundStyle(Color.blue.opacity(0.9), Color.blue.opacity(0.9))
-								.onTapGesture {
-									withAnimation {
-										dataManager.isDarkMode.toggle()                           }
+								.onTapGesture{
+									withAnimation(.easeInOut(duration: 10)) { // Slow down the animation
+										dataManager.isDarkMode.toggle()
 								}
+						}
 						} else {
 							Image("sunmoon")
 								.symbolRenderingMode(.palette)
@@ -129,13 +166,14 @@ struct MyToolbarItems: ToolbarContent {
 								}
 								.foregroundStyle(Color.blue, Color.white)
 								.font(.title2)
-								.onTapGesture {
-									withAnimation {
+								.onTapGesture{
+									withAnimation(.easeInOut(duration: 10)) { // Slow down the animation
 										dataManager.isDarkMode.toggle()
 									}
 								}
 						}
 					}
+					Spacer()
 				}
 			}
 
@@ -146,9 +184,11 @@ struct MyToolbarItems: ToolbarContent {
 @available(iOS 17.0, *)
 
 #Preview {
-
-		ContentView()
+	NavigationStack {
+		JobsView()
 			.environmentObject(DataManager())
+	}
+	
 
 }
 

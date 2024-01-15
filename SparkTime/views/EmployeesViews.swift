@@ -18,7 +18,7 @@ struct EmployeesViews: View {
 		VStack {
 			VStack(spacing: 1) {
 				HStack(spacing: 1) {
-					BackButton(destination: EmployeeView(), isActive: $navigateBack).frame(alignment: .leading)
+//					BackButton(destination: EmployeeView(), isActive: $navigateBack).frame(alignment: .leading)
 
 					VStack {
 						Image("3times")
@@ -141,6 +141,7 @@ struct EmployeesViews: View {
 		}  .onAppear {
 			
 		}
+	  
 	}
 }
 
