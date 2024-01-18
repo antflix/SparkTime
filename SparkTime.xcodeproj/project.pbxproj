@@ -6,6 +6,20 @@
 	objectVersion = 56;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		CE84F91E2B58CA660005D682 /* remove unused code */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = CE84F9212B58CA660005D682 /* Build configuration list for PBXAggregateTarget "remove unused code" */;
+			buildPhases = (
+				CE84F9222B58CA7F0005D682 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "remove unused code";
+			productName = "remove unused code";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		CE16CFEF2B47C10100BFF5EC /* OutletsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16CFEE2B47C10100BFF5EC /* OutletsView.swift */; };
 		CE1AFC102B433746008FB9E7 /* TESTERVIEW.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1AFC0F2B433746008FB9E7 /* TESTERVIEW.swift */; };
@@ -206,6 +220,9 @@
 					CE81D7A72B3D5D6200610785 = {
 						CreatedOnToolsVersion = 15.1;
 					};
+					CE84F91E2B58CA660005D682 = {
+						CreatedOnToolsVersion = 15.1;
+					};
 				};
 			};
 			buildConfigurationList = CE81D7A32B3D5D6200610785 /* Build configuration list for PBXProject "SparkTime" */;
@@ -226,6 +243,7 @@
 			projectRoot = "";
 			targets = (
 				CE81D7A72B3D5D6200610785 /* SparkTime */,
+				CE84F91E2B58CA660005D682 /* remove unused code */,
 			);
 		};
 /* End PBXProject section */
@@ -245,6 +263,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CE84F9222B58CA7F0005D682 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nperiphery scan --project SparkTime.xcodeproj --schemes SparkTime --targets SparkTime --format xcode\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CE81D7A42B3D5D6200610785 /* Sources */ = {
@@ -483,6 +521,26 @@
 			};
 			name = Release;
 		};
+		CE84F91F2B58CA660005D682 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 729NUWS546;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		CE84F9202B58CA660005D682 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 729NUWS546;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -500,6 +558,15 @@
 			buildConfigurations = (
 				CE81D7B82B3D5D6400610785 /* Debug */,
 				CE81D7B92B3D5D6400610785 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE84F9212B58CA660005D682 /* Build configuration list for PBXAggregateTarget "remove unused code" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE84F91F2B58CA660005D682 /* Debug */,
+				CE84F9202B58CA660005D682 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
