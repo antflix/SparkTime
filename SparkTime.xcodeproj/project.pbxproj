@@ -82,6 +82,7 @@
 		CE81D7ED2B3D9CEA00610785 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		CE81D7F22B3E6EC400610785 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		CE81F9012B414EDC003F9612 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		CE84F9232B59EE360005D682 /* SparkTime.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = SparkTime.xctestplan; sourceTree = "<group>"; };
 		CE96D86B2B42B72C00764C6F /* NewProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProject.swift; sourceTree = "<group>"; };
 		CEDEE6B92B4A297B00E4B074 /* materials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = materials.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,6 +103,7 @@
 		CE81D79F2B3D5D6200610785 = {
 			isa = PBXGroup;
 			children = (
+				CE84F9232B59EE360005D682 /* SparkTime.xctestplan */,
 				CE75DB222B4290CB00C1AD81 /* Assets.xcassets */,
 				CE81D7AA2B3D5D6200610785 /* SparkTime */,
 				CE81D7A92B3D5D6200610785 /* Products */,

@@ -417,7 +417,7 @@ Spacer()
             Text("Single Gang").foregroundStyle(Color.white).font(.title2).bold().padding(
               .top, 25.0)
             Spacer()
-            Image("duplex")
+            Image("lightswitch.on.square.fill")
               .padding(.top)
               .padding(.trailing, 40)
               .aspectRatio(contentMode: .fit)

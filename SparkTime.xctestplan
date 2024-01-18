@@ -1,0 +1,42 @@
+{
+  "configurations" : [
+    {
+      "id" : "359C4381-7FB3-4284-AAB1-A17C3BFF8A2F",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:SparkTime.xcodeproj",
+          "identifier" : "CE81D7A72B3D5D6200610785",
+          "name" : "SparkTime"
+        }
+      ]
+    },
+    "commandLineArgumentEntries" : [
+      {
+        "argument" : ""
+      }
+    ],
+    "environmentVariableEntries" : [
+      {
+        "key" : "CG_NUMERICS_SHOW_BACKTRACE",
+        "value" : "1"
+      }
+    ],
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:SparkTime.xcodeproj",
+      "identifier" : "CE81D7A72B3D5D6200610785",
+      "name" : "SparkTime"
+    }
+  },
+  "testTargets" : [
+
+  ],
+  "version" : 1
+}
