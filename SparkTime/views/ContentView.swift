@@ -23,7 +23,7 @@ struct ContentView: View {
     @State private var settingsPopoverAnchor: Anchor<CGRect>?
 
     enum Tab {
-        case start, material, jobs, createProject, singleGangView, employee, employees, preview, testView
+        case start, material, jobs, createProject, singleGangView, employee, employees, preview, switches, testView
     }
 
     @State private var selectedTab: Tab = .start // Track selected tab
@@ -58,7 +58,9 @@ struct ContentView: View {
                     PreViews()
 //                          .toolbar{MyToolbarItems()}
                         .environmentObject(dataManager)
-
+					case .switches:
+						SwitchesView()
+							.environmentObject(dataManager)
                 case .testView:
 						OutletCalculatorView()
                         .environmentObject(dataManager)

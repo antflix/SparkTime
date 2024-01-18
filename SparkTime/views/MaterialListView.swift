@@ -376,11 +376,12 @@ struct MaterialListView: View {
 				}.tag(1)
 				
 				VStack {
-					MiscView()
+					SwitchesView()
 					
 				}.tag(2)
 				VStack {
-					Text("Switches Placeholder")
+					
+					MiscView()
 				}.tag(3)
 				VStack {
 					OutletCalculatorView()
