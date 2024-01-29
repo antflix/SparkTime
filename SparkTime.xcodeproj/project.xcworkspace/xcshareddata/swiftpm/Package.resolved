@@ -1,21 +1,30 @@
 {
   "pins" : [
     {
-      "identity" : "inject",
+      "identity" : "swift-syntax",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/krzysztofzablocki/Inject.git",
+      "location" : "https://github.com/apple/swift-syntax.git",
       "state" : {
-        "revision" : "2057eb9819813b89fd2107e99608d2d20890d9c5",
-        "version" : "1.2.4"
+        "revision" : "64889f0c732f210a935a0ad7cda38f77f876262d",
+        "version" : "509.1.1"
       }
     },
     {
-      "identity" : "swiftfulloadingindicators",
+      "identity" : "vcomponents",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/SwiftfulThinking/SwiftfulLoadingIndicators.git",
+      "location" : "https://github.com/VakhoKontridze/VComponents",
       "state" : {
-        "revision" : "85858c0246dcd781228301f9928519f75ce89758",
-        "version" : "0.0.4"
+        "revision" : "d4e054e1368dfb530b3382d4e031892a908d71e2",
+        "version" : "5.3.1"
+      }
+    },
+    {
+      "identity" : "vcore",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/VakhoKontridze/VCore",
+      "state" : {
+        "revision" : "4e7feae1fbbc3b1bd97df5162fe63fb14c1bb269",
+        "version" : "5.3.1"
       }
     }
   ],

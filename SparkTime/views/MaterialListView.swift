@@ -219,6 +219,7 @@ struct MaterialFormView: View {
             "Cut-in": cutin,
             "Surface Mounted": surfaceMounted,
             "Controlled": controlled,
+			
             "Quad Bracket Box": quadBracketBox,
             "Quad GFCI": quadGFCI,
             "Quad Cut-in": quadCutIn,
@@ -384,9 +385,11 @@ struct MaterialListView: View {
 					MiscView()
 				}.tag(3)
 				VStack {
+					
 					OutletCalculatorView()
 					
 				}.tag(4)
+				
 			}
 			.indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
 			.tabViewStyle(PageTabViewStyle())
@@ -395,14 +398,9 @@ struct MaterialListView: View {
 //					self.setGradient(gradient: [Color.black, Color.blue])
 //				}
 //			})
-			.navigationBarTitleDisplayMode(.inline)
+			.navigationBarHidden(true)
+			.modifier(DarkModeLightModeBackground())
 			
-			.navigationTitle(dataManager.projectName)
-			.toolbar {
-				ToolbarItem() {
-					sunview().padding(30)
-				}
-			}
 		}.modifier(DarkModeLightModeBackground())
 		.edgesIgnoringSafeArea(.all)
 		.onAppear()

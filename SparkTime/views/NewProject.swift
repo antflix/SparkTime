@@ -216,8 +216,9 @@ struct CreateProjectView: View {
 
 @available(iOS 17.0, *)
 struct blueGradient: View {
+	@EnvironmentObject var dataManager: DataManager
 	@State private var gradientA: [Color] = [.black, .blue]
-	@State private var gradientB: [Color] = [.red, .purple]
+	@State private var gradientB: [Color] = [.blue, .black]
 	@State private var quadBracketBox = ""
 	@State private var quadGFCI = ""
 	@State private var quadCutIn = ""
@@ -256,21 +257,30 @@ struct blueGradient: View {
 			
 				.onChange(of: selected, perform: { value in
 					withAnimation(.spring()) {
-						self.setGradient(gradient: [Color.black, Color.blue])
+						self.setGradient(gradient: [Color.black, dataManager.themeColor])
 					}
 				})
-			
-			
+				.onChange(of: dataManager.themeColor, perform: { _ in // Listen to changes in themeColor
+					withAnimation(.spring()) {
+						self.setGradient(gradient: [Color.black, dataManager.themeColor]) // Use the updated themeColor
+					}
+				})
 		}
 		.edgesIgnoringSafeArea(.all)
+		.onAppear {
+			// Set actual values after the View has appeared
+			gradientA = [.black, dataManager.themeColor]
+			gradientB = [dataManager.themeColor, .black]
+		}
 	}
 	
 }
 
 
 struct lightblueGradient: View {
+	@EnvironmentObject var dataManager: DataManager
 	@State private var gradientA: [Color] = [.gray, .blue]
-	@State private var gradientB: [Color] = [.gray, .red]
+	@State private var gradientB: [Color] = [.gray, .gray]
 	@State private var quadBracketBox = ""
 	@State private var quadGFCI = ""
 	@State private var quadCutIn = ""
@@ -300,11 +310,21 @@ struct lightblueGradient: View {
 			
 				.onChange(of: selected, perform: { value in
 					withAnimation(.spring()) {
-						self.setGradient(gradient: [Color.black, Color.blue])
+						self.setGradient(gradient: [Color.gray, dataManager.themeColor])
+					}
+				})
+				.onChange(of: dataManager.themeColor, perform: { _ in // Listen to changes in themeColor
+					withAnimation(.spring()) {
+						self.setGradient(gradient: [Color.gray, dataManager.themeColor]) // Use the updated themeColor
 					}
 				})
 		}
 		.edgesIgnoringSafeArea(.all)
+		.onAppear {
+			// Set actual values after the View has appeared
+			gradientA = [.gray, dataManager.themeColor]
+			gradientB = [dataManager.themeColor, .gray]
+		}
 	}
 }
 
@@ -317,9 +337,11 @@ struct DarkModeLightModeBackground: ViewModifier {
 		content
 			.background(AnyView(Group {
 				if dataManager.isDarkMode {
-					lightblueGradient()
-				} else {
 					blueGradient()
+
+				} else {
+					lightblueGradient()
+
 				}
 			}).transition(.opacity).animation(.easeInOut(duration: 3)))
 			.edgesIgnoringSafeArea(.all)
@@ -365,16 +387,17 @@ struct sunview: View {
 	var body: some View {
 		GeometryReader { geometry in
 			ZStack {
-				Image(systemName: dataManager.isDarkMode ? "sun.max" : "moon")
+				Image(systemName: dataManager.isDarkMode ? "moon" : "sun.max")
 					.padding(10)
 					.font(.title)
 					
-					.offset(x: 0, y: -geometry.size.width / 4) // Half the screen width for radius
+//					.offset(x: 0, y: -geometry.size.width / 4) // Half the screen width for radius
 					.rotationEffect(.degrees(rotateDegree))
-					.foregroundStyle(dataManager.isDarkMode ? .yellow: .gray)
+					.foregroundStyle(dataManager.isDarkMode ? .gray: .yellow)
 					
 			}
-			.position(x: geometry.size.width / 2, y: geometry.size.height / 7)
+//			.position(x: geometry.size.width / 2, y: geometry.size.height / 7)
+			.position(x: geometry.size.width - 40, y: -20 )
 			.onAppear {
 				dataManager.updateDarkMode(colorScheme: colorScheme)
 			}
@@ -407,7 +430,7 @@ struct sunview_Previews: PreviewProvider {
 @available(iOS 17.0, *)
 struct NewProject_Previews: PreviewProvider {
 	static var previews: some View {
-		CreateProjectView()
+		lightblueGradient()
 			.environmentObject(DataManager())
 
 	}

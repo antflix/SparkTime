@@ -46,8 +46,6 @@ class DataManager: ObservableObject {
 	@Published var homerun: String = ""
 	@Published var mcTotal: String = ""
 	
-
-	
 	@Published var lineVoltageDimmingSwitch: String = ""
 	@Published var lineVoltageDimmingCutin: String = ""
 	
@@ -91,7 +89,7 @@ class DataManager: ObservableObject {
 	@Published var alarmNoise: String = "customAlarm-2.mp3"
 	@Published var selectedContacts: [CNContact] = []
 	@Published var isAlarmSet: Bool = UserDefaults.standard.bool(forKey: "isAlarmSet")
-
+	@Published var themeColor: Color = .blue // Default theme colo
 	init() {
 		self.isDarkMode = UserDefaults.standard.bool(forKey: "isDarkMode")
 		//         self.selectedContact = DataManager.loadContact()
@@ -121,7 +119,11 @@ class DataManager: ObservableObject {
 
 	}
 	func updateDarkMode(colorScheme: ColorScheme) {
-		isDarkMode = (colorScheme == .dark)
+		if colorScheme == .dark {
+			isDarkMode = true
+		} else {
+			isDarkMode = false
+		}
 	}
 	// Dictionary to hold employee hours data
 	func calculateTotal() {
@@ -425,15 +427,16 @@ class DataManager: ObservableObject {
 				"4-Square Bracket Box": 1,
 				"Single Gang Mud Ring": 1,
 				"Ground Stinger": 1,
-				"Tek Screws": 10,
+				"Tek Screws": 7,
 				"Mac-2 Straps": 4,
-				"Red/Yellow Wire Nuts": 1,
+				"Red/Yellow Wire Nuts": 3,
 				"Red Heads": 2,
 				"Double Barrel MC Connector": 1,
-				"12/2 LV MC": 30,
-				"KX Straps": 2,
+				"12/2 LV MC": 35,
 				"Outlet": 1,//need to add outlet type
-				"Single Gang Outlet Cover Plate": 1//need to add outlet type
+				"Single Gang Outlet Cover Plate": 1,//need to add outlet type
+//				"KX Straps": 2,
+//				"Ceiling Wire": 2
 			],
 			"GFCI": [
 				"4-Square Bracket Box": 1,
@@ -446,28 +449,25 @@ class DataManager: ObservableObject {
 				"Single Barrel MC Connector": 1,
 				"NVent Caddy Mounting Slider Bracket": 1,
 				"12/2 LV MC": 30,
-				"KX Straps": 2,
-				"GFCI Outlet": 1
+				"GFCI Outlet": 1,
+//				"KX Straps": 2,
 			],
 			"Cut-In"  : [
-				
-				"4-Square Bracket Box": 1,
 				"Ground Stinger": 1,
 				"Tek Screws": 10,
 				"Mac-2 Straps": 4,
 				"Red/Yellow Wire Nuts": 1,
 				"Red Heads": 2,
 				"Single Barrel MC Connector": 1,
-				"NVent Caddy Mounting Slider Bracket": 0,
 				"12/2 LV MC": 30,
 				"KX Straps": 2,
 				"Outlet": 1, //need to add outlet type
 				"Single Gang Outlet Cover Plate": 1,// need to add outlet type
 				"Cut-In Box": 1,
-				"Drywall Clamps": 1
+				"Drywall Clamps": 1,
+				"4-Square Bracket Box": 1,
 			],
 			"Surface Mounted": [
-				
 				"4-Square Box": 2,
 				"Single Gang Industrial Cover Plug Plate": 1,//need to add outlet type
 				"4-Square Cover": 1,
@@ -493,22 +493,20 @@ class DataManager: ObservableObject {
 				"Ground Stinger": 2,
 				"Tek Screws": 10,
 				"Mac-2 Straps": 3,
-				"Red/Yellow Wire Nuts": 5,
-				"Red Heads": 4,
+				"Red/Yellow Wire Nuts": 4,
+				"Red Heads": 2,
 				"Double Barrel MC Connector": 1,
 				"Single Barrel MC Connector": 2,
 				"NVent Caddy Mounting Slider Bracket": 2,
-				"12/2 LV MC": 20,
-				"12/3 LV MC": 10,
+				"12/3 LV MC": 35,
 				"Half-Duplex Controlled Outlet": 1,//need to add outlet type
-				"Single Gang Outlet Cover Plate": 1,//need to add outlet type
+				"Single Gang Outlet Cover Plate": 1//need to add outlet type
 			],
 			"Scaled": [
 				"NVent Caddy Mounting Slider Bracket": 1,
 				"Tek Screws": 4,
 			],
 			"Quad Bracket Box": [
-				
 				"4-Square Bracket Box": 1,
 				"Single Gang Mud Ring": 1,
 				"Ground Stinger": 1,
@@ -518,12 +516,12 @@ class DataManager: ObservableObject {
 				"Red Heads": 2,
 				"Double Barrel MC Connector": 1,
 				"12/2 LV MC": 30,
-				"KX Straps": 2,
 				"Outlet": 2, //need to add outlet type
 				"Two Gang Outlet Cover Plate": 1,//need to add outlet type
+//				"KX Straps": 2,
+
 			],
 			"Quad GFCI": [
-				
 				"4-Square Bracket Box": 1,
 				"Single Gang Mud Ring": 1,
 				"Ground Stinger": 1,
@@ -534,12 +532,11 @@ class DataManager: ObservableObject {
 				"Double Barrel MC Connector": 1,
 				"NVent Caddy Mounting Slider Bracket": 1,
 				"12/2 LV MC": 30,
-				"KX Straps": 2,
 				"GFCI Outlet": 2,
-				"Two Gang Outlet Cover Plate": 1, //need to add outlet type
+				"Two Gang Decora Outlet Cover Plate": 1, //need to add outlet type
+//				"KX Straps": 2
 			],
 			"Homerun Quantity": [
-				
 				"Deep 4-Square Bracket Box": 1,
 				"Ground Stinger": 1,
 				"Double Barrel MC Connector": 2,
@@ -549,10 +546,8 @@ class DataManager: ObservableObject {
 				"Red/Yellow Wire Nuts": 1,
 				"4-Square Cover": 1,
 				"Mac-2 Straps": 4,
-				"KX Straps": 2,
 				"Ceiling Wires": 1,
-
-	
+				"KX Straps": 2,
 			],
 
 			"Quad Cut-in"  : [
@@ -566,7 +561,7 @@ class DataManager: ObservableObject {
 				"12/2 LV MC": 30,
 				"KX Straps": 2,
 				"Outlet": 2,//need to add outlet type
-				"Single Gang Outlet Cover Plate": 1,//need to add outlet type
+				"Two Gang Outlet Cover Plate": 1,//need to add outlet type
 				"Cut-In Box": 2,
 				"Drywall Clamps": 1
 			],
@@ -593,18 +588,18 @@ class DataManager: ObservableObject {
 				
 				"Deep 4-Square Bracket Box": 2,
 				"Two Gang Mud Ring": 1,
-				"Ground Stinger": 2,
+				"Ground Stinger": 1,
 				"Tek Screws": 10,
-				"Mac-2 Straps": 6,
+				"Mac-2 Straps": 4,
 				"Red/Yellow Wire Nuts": 5,
 				"Red Heads": 4,
 				"Double Barrel MC Connector": 1,
-				"Single Barrel MC Connector": 2,
 				"NVent Caddy Mounting Slider Bracket": 3,
-				"12/2 LV MC": 20,
-				"12/3 LV MC": 10,
+				"Outlet": 1,//need to add outlet type
+				"12/3 LV MC": 35,
 				"Full-Duplex Controlled Outlet": 1,//need to add outlet type
-				"Single Gang Outlet Cover Plate": 1,//need to add outlet type
+				"Two Gang Outlet Cover Plate": 1//need to add outlet type
+				
 			],
 			"3wire Furniture Feed": [
 				
@@ -980,7 +975,7 @@ class DataManager: ObservableObject {
 			"12/2 LV MC",
 			"KX Straps",
 			"Outlet",
-			"Single Gang Outlet Cover Plate",
+			"Two Gang Outlet Cover Plate",
 			"Cut-In Box",
 			"Drywall Clamps"
 		],

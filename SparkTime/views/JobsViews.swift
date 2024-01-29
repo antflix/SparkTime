@@ -58,7 +58,7 @@ struct JobsView: View {
 								.padding()
 						}
 					}
-					.background(Color.blue)
+					.background(dataManager.themeColor)
 					.foregroundColor(.white)
 					.font(.headline)
 					ZStack(alignment: .bottom) {
@@ -84,21 +84,21 @@ struct JobsView: View {
 											// Define your popover content here
 											Spacer()
 											Text("Job Name-").font(.largeTitle).underline(Bool(true)).foregroundStyle(Color("Color 6"))
-											Text("\(job[1])").foregroundStyle(Color.blue).font(.title)
+											Text("\(job[1])").foregroundStyle(dataManager.themeColor).font(.title)
 											
 											Spacer()
 											
 											Text("Job #-").font(.largeTitle).underline(Bool(true)).foregroundStyle(Color("Color 6"))
-											Text("\(job[0])").foregroundStyle(Color.blue).font(.title)
+											Text("\(job[0])").foregroundStyle(dataManager.themeColor).font(.title)
 											Spacer()
 											
 											Text("Date Created").font(.largeTitle).underline(Bool(true)).foregroundStyle(Color("Color 6"))
-											Text("\(job[2])").foregroundStyle(Color.blue).font(.title)
+											Text("\(job[2])").foregroundStyle(dataManager.themeColor).font(.title)
 											Spacer()
 										}
 									}
 								}
-								.foregroundColor(Color("Color 6"))
+								.foregroundColor(Color("BWText"))
 								.font(.headline)
 								.padding(5)
 								.frame(maxWidth: .infinity * 0.85, alignment: .leading)
@@ -120,7 +120,7 @@ struct JobsView: View {
 						}
 						.background(Color("Color 7"))
 						
-						.foregroundColor(Color.black)
+						.foregroundColor(Color("BWText"))
 						.onAppear {
 							resetEmployeeData() // Call the function to reset employee data when the view appears
 							dataManager.selectedJobID = ""

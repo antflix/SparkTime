@@ -1,4 +1,4 @@
-import MessageUI
+//import MessageUI
 import SwiftUI
 
 struct Job: Codable {
@@ -10,7 +10,7 @@ struct Job: Codable {
 @available(iOS 17.0, *)
 struct ContentView: View {
     @StateObject var dataManager = DataManager()
-//    @StateObject var darkModeSettings = DataManager() // Use observed object for dark mode
+//    @StateObject var darkModeSettings = DataManager() // Use observed object for dark modem
 
     @State private var selectedJobID: String?
     @Environment(\.colorScheme) var colorScheme
@@ -23,7 +23,7 @@ struct ContentView: View {
     @State private var settingsPopoverAnchor: Anchor<CGRect>?
 
     enum Tab {
-        case start, material, jobs, createProject, singleGangView, employee, employees, preview, switches, testView
+        case start, material, jobs, createProject, singleGangView, employee, employees, preview, switches, themes, testView
     }
 
     @State private var selectedTab: Tab = .start // Track selected tab
@@ -61,9 +61,12 @@ struct ContentView: View {
 					case .switches:
 						SwitchesView()
 							.environmentObject(dataManager)
+					case .themes:
+						ThemeView()
+							.environmentObject(dataManager)
                 case .testView:
-						OutletCalculatorView()
-                        .environmentObject(dataManager)
+						ContentView1()
+                       
                 }
 
             }

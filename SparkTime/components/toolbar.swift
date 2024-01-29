@@ -45,7 +45,7 @@ struct MyToolbarItems: ToolbarContent {
 						isHomePresented = true
 					}) {
 						Image(systemName: "house")
-							.foregroundStyle(Color.blue)
+							.foregroundStyle(dataManager.themeColor)
 							.font(Font.custom("Quicksand", size: 24).bold())
 						
 					}
@@ -57,15 +57,9 @@ struct MyToolbarItems: ToolbarContent {
 					.background(Color.green)
 					.bold()
 					.foregroundColor(.white)
-					
-					
-					
-					
+				
 					}.padding()
-			
-					
-					
-					
+
 					Spacer()
 					HStack {
 						Button(action: {
@@ -77,7 +71,7 @@ struct MyToolbarItems: ToolbarContent {
 									.font(Font.custom("Quicksand", size: 24).bold())
 									.aspectRatio(contentMode: .fit)
 									.symbolRenderingMode(.palette)
-									.foregroundStyle(Color.green, Color.blue)
+									.foregroundStyle(Color.green, dataManager.themeColor)
 								
 							} else {
 								Image(systemName: "person.fill.questionmark")
@@ -87,7 +81,7 @@ struct MyToolbarItems: ToolbarContent {
 										symbolAnimation.toggle()
 									}
 								
-									.foregroundStyle(Color.red, Color.blue)
+									.foregroundStyle(Color.red, dataManager.themeColor)
 									.symbolEffect(.variableColor.reversing.cumulative, options: .repeat(100).speed(1), value: symbolAnimation)
 								
 							}
@@ -103,7 +97,7 @@ struct MyToolbarItems: ToolbarContent {
 							isPopoverPresented.toggle()
 						}) {
 							Image(systemName: "clock.arrow.2.circlepath")
-								.foregroundStyle(Color("Color 6"), Color.blue)
+								.foregroundStyle(Color("Color 6"), dataManager.themeColor)
 								.font(Font.custom("Quicksand", size: 24).bold())
 						}
 						.popover(isPresented: $isPopoverPresented, arrowEdge: .top) {
@@ -114,7 +108,7 @@ struct MyToolbarItems: ToolbarContent {
 					// Add an onTapGesture to the arrow.up.trash symbol
 					HStack {
 						Image(systemName: "arrow.up.trash")
-							.foregroundStyle(Color("Color 6"), Color.blue)
+							.foregroundStyle(Color("Color 6"), dataManager.themeColor)
 							.mask(Circle())
 							.font(Font.custom("Quicksand", size: 24).bold())
 							.onTapGesture {
@@ -152,7 +146,7 @@ struct MyToolbarItems: ToolbarContent {
 								}
 								.font(.title2)
 
-								.foregroundStyle(Color.blue.opacity(0.9), Color.blue.opacity(0.9))
+								.foregroundStyle(dataManager.themeColor.opacity(0.9), dataManager.themeColor.opacity(0.9))
 								.onTapGesture{
 									withAnimation(.easeInOut(duration: 10)) { // Slow down the animation
 										dataManager.isDarkMode.toggle()
@@ -164,7 +158,7 @@ struct MyToolbarItems: ToolbarContent {
 								.onAppear {
 									symbolAnimation.toggle()
 								}
-								.foregroundStyle(Color.blue, Color.white)
+								.foregroundStyle(dataManager.themeColor, Color.white)
 								.font(.title2)
 								.onTapGesture{
 									withAnimation(.easeInOut(duration: 10)) { // Slow down the animation

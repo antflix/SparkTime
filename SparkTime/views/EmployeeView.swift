@@ -29,7 +29,7 @@ struct EmployeeView: View {
 						Image("3time")
 							.aspectRatio(contentMode: .fit)
 							.symbolRenderingMode(.palette)
-							.font(Font.title.weight(.ultraLight))						.foregroundStyle(Color.white, Color.blue, Color.black)
+							.font(Font.title.weight(.ultraLight))						.foregroundStyle(Color.white, dataManager.themeColor, Color.black)
 						
 						Text("Employee Hours").font(Font.custom("Quicksand", size: 30).bold())
 							.frame(maxWidth: .infinity * 0.90, alignment: .center)
@@ -72,13 +72,13 @@ struct EmployeeView: View {
 										.foregroundColor(Color("Color 6"))
 									+
 									Text(" Individual Hours").bold().fontWeight(.heavy)
-										.foregroundColor(Color.blue)
+										.foregroundColor(dataManager.themeColor)
 									+
 									Text(" otherwise, click")
 										.foregroundColor(Color("Color 6"))
 									+
 									Text(" Next").bold().fontWeight(.heavy)
-										.foregroundColor(Color.blue)
+										.foregroundColor(dataManager.themeColor)
 								}
 								.padding()
 							}
@@ -90,7 +90,7 @@ struct EmployeeView: View {
 					}
 				}
 				.padding(.horizontal)
-				.background(Color.blue)
+				.background(dataManager.themeColor)
 				.foregroundColor(.white)
 				.font(.headline)
 				ZStack {
@@ -251,7 +251,7 @@ struct EmployeeView: View {
 //		echo "warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint"
 //		fi
 
-    //        .foregroundColor(colorScheme == .dark ? Color.blue : Color.black)
+    //        .foregroundColor(colorScheme == .dark ? dataManager.themeColor : Color.black)
 
 }
 

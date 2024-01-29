@@ -17,23 +17,30 @@ import SwiftUI
 import SwiftUI
 @available(iOS 17.0, *)
 struct StartView: View {
-	
+	@State private var isPopupVisible = false
+	@State private var symbolAnimation = false
+
 	var body: some View {
 		VStack {
 			VStack {
 				// Header
-				Text("Sparklist")
-					.font(.largeTitle)
-					.padding()
-					.foregroundStyle(Color("Color 6"))
-				Text("The best apprentace")
-					.font(.subheadline)
-					.padding(.bottom)
-					.foregroundStyle(Color("Color 6"))
-				Divider()
+				Text("Sparklists")
+					.padding(.horizontal)
+					.foregroundStyle(Color.white)
+					.font(Font.custom("Quicksand", size: 60))
+					.frame(maxWidth: .infinity * 0.90, alignment: .center)
+				
+				Text("The best apprentace you'll ever hire.")
+					.foregroundStyle(Color.white)
+					.font(Font.custom("Quicksand", size: 10).bold())
+					.frame(maxWidth: .infinity * 0.90, alignment: .center)
+				
 
 				//				AnimatedGradientDivider()
-			}
+			}.padding(.vertical, 30)
+			Divider().frame(height: 1.0).background(
+				Color(dataManager.themeColor)
+			).padding(.vertical, 1)
 			// Buttons for different options
 			Spacer()
 			VStack {
@@ -137,10 +144,47 @@ struct StartView: View {
 				Spacer()
 			}
 			Spacer()
+			Button(action: {
+				// Toggle the visibility of the pop-up
+				isPopupVisible.toggle()
+			}) {
+				// Use a system icon
+				Image("colorWheel")
+					.symbolRenderingMode(.multicolor)
+					.onAppear {
+						symbolAnimation.toggle()
+					}
+				
+					.symbolEffect(.variableColor.reversing.cumulative, options: .repeat(100).speed(1), value: symbolAnimation)
+					.font(.largeTitle)
+				// Customize your button's appearance
+				
+			}
+			.popover(isPresented: $isPopupVisible, arrowEdge: .top) {
+				ThemeView()
+			}
+//			NavigationLink(destination: SettingsView()) {
+//				Text("Time Turner-Inner")
+//					.foregroundStyle(Color.white)
+//					.padding(.top, 20)
+//					.padding(.bottom, 20)
+//					.frame(maxWidth: .infinity, alignment: .center)
+//					.background(Color("button2"))
+//					.cornerRadius(5)
+//					.shadow(color: .black.opacity(0.1), radius: 2, x: 0, y: 2)
+//				
+//			}
+//			.buttonStyle(PlainButtonStyle())
+//			
+//			.padding(.horizontal, 0)
+//			.padding(.top, 0)
+//			.padding(.bottom, 5)
+//			.frame(maxWidth: .infinity, alignment: .topLeading)
+			
 		}
-		.toolbar { MyToolbarItems() }
+		
 		.padding()
-			.background(Color("Color 7"))
+			.background(Color("Color 8"))
 		
 		
 	}

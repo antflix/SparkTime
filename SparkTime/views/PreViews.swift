@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import MessageUI
+//import MessageUI
 import SwiftUI
 
 @available(iOS 17.0, *)
@@ -74,7 +74,7 @@ struct PreViews: View {
 					.frame(maxWidth: .infinity * 0.90, alignment: .center)
 			}
             .padding()
-            .background(Color.blue)
+            .background(dataManager.themeColor)
             .foregroundColor(.white)
             .font(.headline)
 

@@ -1,5 +1,4 @@
 import SwiftUI
-import SwiftfulLoadingIndicators
 
 @available(iOS 17.0, *)
 struct EmployeesViews: View {
@@ -24,7 +23,7 @@ struct EmployeesViews: View {
 						Image("3times")
 							.aspectRatio(contentMode: .fit)
 							.symbolRenderingMode(.palette)
-							.foregroundStyle(Color.white, Color.blue, Color.black)
+							.foregroundStyle(Color.white, dataManager.themeColor, Color.black)
 							.font(Font.title.weight(.ultraLight))
 							
 						Text("Employees").font(Font.custom("Quicksand", size: 30).bold())
@@ -78,7 +77,7 @@ struct EmployeesViews: View {
 					}
 				}
 				.padding(.horizontal)
-				.background(Color.blue)
+				.background(dataManager.themeColor)
 				.foregroundColor(.white)
 				.font(.headline)
 			}
