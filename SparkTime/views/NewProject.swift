@@ -276,6 +276,20 @@ struct blueGradient: View {
 	
 }
 
+import SwiftUI
+
+// SwiftUI wrapper for UIVisualEffectView
+struct BlurView: UIViewRepresentable {
+	var style: UIBlurEffect.Style
+	
+	func makeUIView(context: Context) -> UIVisualEffectView {
+		UIVisualEffectView(effect: UIBlurEffect(style: style))
+	}
+	
+	func updateUIView(_ uiView: UIVisualEffectView, context: Context) {
+		uiView.effect = UIBlurEffect(style: style)
+	}
+}
 
 struct lightblueGradient: View {
 	@EnvironmentObject var dataManager: DataManager
@@ -397,10 +411,10 @@ struct sunview: View {
 					
 			}
 //			.position(x: geometry.size.width / 2, y: geometry.size.height / 7)
-			.position(x: geometry.size.width - 40, y: -20 )
-			.onAppear {
-				dataManager.updateDarkMode(colorScheme: colorScheme)
-			}
+			.position(x: geometry.size.width - 40, y: 20 )
+//			.onAppear {
+//				dataManager.updateDarkMode(colorScheme: colorScheme)
+//			}
 			.onTapGesture {
 				withAnimation(Animation.easeInOut(duration: 0.5)) {
 					dataManager.isDarkMode.toggle()
@@ -413,6 +427,7 @@ struct sunview: View {
 		.frame(maxWidth: .infinity, maxHeight: .infinity)
 	}
 }
+
 @available(iOS 17.0, *)
 struct sunview_Previews: PreviewProvider {
 	

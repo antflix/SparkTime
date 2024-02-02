@@ -340,32 +340,31 @@ struct MaterialFormView: View {
 struct MaterialListView: View {
 //	@State private var gradientA: [Color] = [.black, .blue]
 //	@State private var gradientB: [Color] = [.red, .purple]
-//	
+	    @State private var materialRequirements: [String: [String: Int]] = [:]  // Initialize appropriately
+
 	@State private var firstPlane: Bool = true
-//	
-//	func setGradient(gradient: [Color]) {
-//		if firstPlane {
-//			
-//			gradientB = gradient
-//		}
-//		else {
-//			gradientA = gradient
-//		}
-//		firstPlane = !firstPlane
-//	}
-//	
+
+	@State private var showMenu = false
+
 	@State private var selected = 0
 	@State private var goHome = false
+	func loadFromUserDefaults() {
+		if let savedData = UserDefaults.standard.data(forKey: "MaterialRequirements"),
+		   let decodedData = try? JSONDecoder().decode([String: [String: Int]].self, from: savedData)
+		{
+			self.materialRequirements = decodedData
+		} else {
+			self.materialRequirements = DataManager.defaultMaterialRequirements
+		}
+	}
 	var body: some View {
 		
 		ZStack {
-			
-//			sunview()
-//			LinearGradient(gradient: Gradient(colors: self.gradientA), startPoint: UnitPoint(x: 0, y: 0), endPoint: UnitPoint(x: 0, y: 1))
-//			
-//			LinearGradient(gradient: Gradient(colors: self.gradientB), startPoint: UnitPoint(x: 0, y: 0), endPoint: UnitPoint(x: 0, y: 1))
-//				.opacity(self.firstPlane ? 0 : 0)
-			
+			if dataManager.isDarkMode {
+				blueGradient()
+			} else {
+				lightblueGradient()
+			}
 			TabView(selection: $selected) {
 				VStack {
 					SingleGangView()
@@ -400,15 +399,21 @@ struct MaterialListView: View {
 //			})
 			.navigationBarHidden(true)
 			.modifier(DarkModeLightModeBackground())
+			SlideMenu( isShowing: $showMenu, materialRequirements: $materialRequirements)
+
 			
-		}.modifier(DarkModeLightModeBackground())
+		}
+		.id(dataManager.isDarkMode) 
 		.edgesIgnoringSafeArea(.all)
-		.onAppear()
-		
-		
+		.onAppear { loadFromUserDefaults() }
+	
+		// Sliding Menu
 	}
 
 }
+
+
+
 @available(iOS 17.0, *)
 struct MaterialFormView_Previews: PreviewProvider {
     static var previews: some View {

@@ -12,11 +12,10 @@
 			buildConfigurationList = CE84F92B2B5A14EC0005D682 /* Build configuration list for PBXAggregateTarget "Periphery" */;
 			buildPhases = (
 				CEC5A7EB2B5A179A00E8C0BB /* Run Script */,
-				CEC5A7EC2B5A187100E8C0BB /* CopyFiles */,
+				CEC5A7EC2B5A187100E8C0BB /* Copy Files */,
 			);
 			dependencies = (
 				CE469CA22B65E2AF007BB264 /* PBXTargetDependency */,
-				CE469C9F2B65B160007BB264 /* PBXTargetDependency */,
 			);
 			name = Periphery;
 			productName = Periphery;
@@ -53,11 +52,82 @@
 		CE81F9022B414EDC003F9612 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81F9012B414EDC003F9612 /* StartView.swift */; };
 		CE96D86C2B42B72C00764C6F /* NewProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96D86B2B42B72C00764C6F /* NewProject.swift */; };
 		CEC306F82B6691CB0019E852 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC306F72B6691CB0019E852 /* ThemeView.swift */; };
+		CEC306FA2B6B425D0019E852 /* SlideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC306F92B6B425C0019E852 /* SlideMenu.swift */; };
 		CEDEE6BA2B4A297B00E4B074 /* materials.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDEE6B92B4A297B00E4B074 /* materials.swift */; };
+		CEFCACD62B6C6AFA0089A580 /* SlideMenu.swift in Copy Files */ = {isa = PBXBuildFile; fileRef = CEC306F92B6B425C0019E852 /* SlideMenu.swift */; };
+		CEFCACD72B6C6AFE0089A580 /* materials.swift in Copy Files */ = {isa = PBXBuildFile; fileRef = CEDEE6B92B4A297B00E4B074 /* materials.swift */; };
+		CEFCACD82B6C6B020089A580 /* Triangle.swift in Copy Files */ = {isa = PBXBuildFile; fileRef = CE81D7F22B3E6EC400610785 /* Triangle.swift */; };
+		CEFCACD92B6C6B280089A580 /* PreViews.swift in Copy Files */ = {isa = PBXBuildFile; fileRef = CE81D7D02B3D5DAE00610785 /* PreViews.swift */; };
+		CEFCACDA2B6C6B280089A580 /* SMSGenerator.swift in Copy Files */ = {isa = PBXBuildFile; fileRef = CE81D7BE2B3D5DAD00610785 /* SMSGenerator.swift */; };
+		CEFCACDB2B6C6B280089A580 /* EmployeesViews.swift in Copy Files */ = {isa = PBXBuildFile; fileRef = CE81D7D12B3D5DAE00610785 /* EmployeesViews.swift */; };
+		CEFCACDC2B6C6B280089A580 /* ContactPickerViewController.swift in Copy Files */ = {isa = PBXBuildFile; fileRef = CE81D7BD2B3D5DAD00610785 /* ContactPickerViewController.swift */; };
+		CEFCACDD2B6C6B280089A580 /* alarm.mp3 in Copy Files */ = {isa = PBXBuildFile; fileRef = CE81D7C82B3D5DAD00610785 /* alarm.mp3 */; };
+		CEFCACDE2B6C6B280089A580 /* NewProject.swift in Copy Files */ = {isa = PBXBuildFile; fileRef = CE96D86B2B42B72C00764C6F /* NewProject.swift */; };
+		CEFCACDF2B6C6B280089A580 /* customAlarm-2.mp3 in Copy Files */ = {isa = PBXBuildFile; fileRef = CE81D7C72B3D5DAD00610785 /* customAlarm-2.mp3 */; };
+		CEFCACE02B6C6B280089A580 /* EmployeeView.swift in Copy Files */ = {isa = PBXBuildFile; fileRef = CE81D7D32B3D5DAE00610785 /* EmployeeView.swift */; };
+		CEFCACE12B6C6B280089A580 /* ContactsSelectionView.swift in Copy Files */ = {isa = PBXBuildFile; fileRef = CE81D7C02B3D5DAD00610785 /* ContactsSelectionView.swift */; };
+		CEFCACE22B6C6B280089A580 /* toolbar.swift in Copy Files */ = {isa = PBXBuildFile; fileRef = CE81D7C32B3D5DAD00610785 /* toolbar.swift */; };
+		CEFCACE32B6C6B280089A580 /* MaterialListView.swift in Copy Files */ = {isa = PBXBuildFile; fileRef = CE72CC2D2B40F71C00290E59 /* MaterialListView.swift */; };
+		CEFCACE42B6C6B280089A580 /* customalarm.mp3 in Copy Files */ = {isa = PBXBuildFile; fileRef = CE81D7CD2B3D5DAD00610785 /* customalarm.mp3 */; };
+		CEFCACE52B6C6B280089A580 /* ThemeView.swift in Copy Files */ = {isa = PBXBuildFile; fileRef = CEC306F72B6691CB0019E852 /* ThemeView.swift */; };
+		CEFCACE62B6C6B280089A580 /* JobsViews.swift in Copy Files */ = {isa = PBXBuildFile; fileRef = CE81D7D22B3D5DAE00610785 /* JobsViews.swift */; };
+		CEFCACE72B6C6B280089A580 /* ContentView.swift in Copy Files */ = {isa = PBXBuildFile; fileRef = CE81D7D42B3D5DAE00610785 /* ContentView.swift */; };
+		CEFCACE82B6C6B280089A580 /* DataManager.swift in Copy Files */ = {isa = PBXBuildFile; fileRef = CE81D7CE2B3D5DAD00610785 /* DataManager.swift */; };
+		CEFCACE92B6C6B280089A580 /* AlarmSettingView.swift in Copy Files */ = {isa = PBXBuildFile; fileRef = CE81D7C62B3D5DAD00610785 /* AlarmSettingView.swift */; };
+		CEFCACEA2B6C6B280089A580 /* extensions.swift in Copy Files */ = {isa = PBXBuildFile; fileRef = CE81D7BF2B3D5DAD00610785 /* extensions.swift */; };
+		CEFCACEB2B6C6B280089A580 /* AlarmSound.swift in Copy Files */ = {isa = PBXBuildFile; fileRef = CE81D7CB2B3D5DAD00610785 /* AlarmSound.swift */; };
+		CEFCACEC2B6C6B280089A580 /* StartView.swift in Copy Files */ = {isa = PBXBuildFile; fileRef = CE81F9012B414EDC003F9612 /* StartView.swift */; };
+		CEFCACED2B6C6B280089A580 /* OutletsView.swift in Copy Files */ = {isa = PBXBuildFile; fileRef = CE16CFEE2B47C10100BFF5EC /* OutletsView.swift */; };
+		CEFCACEE2B6C6B280089A580 /* LaunchScreen.swift in Copy Files */ = {isa = PBXBuildFile; fileRef = CE81D7CA2B3D5DAD00610785 /* LaunchScreen.swift */; };
+		CEFCACEF2B6C6B310089A580 /* SparkTimeApp.swift in Copy Files */ = {isa = PBXBuildFile; fileRef = CE81D7AB2B3D5D6200610785 /* SparkTimeApp.swift */; };
+		CEFCACF02B6C6B360089A580 /* TESTERVIEW.swift in Copy Files */ = {isa = PBXBuildFile; fileRef = CE1AFC0F2B433746008FB9E7 /* TESTERVIEW.swift */; };
+		CEFCACF22B6C6B500089A580 /* Assets.xcassets in Copy Files */ = {isa = PBXBuildFile; fileRef = CE75DB222B4290CB00C1AD81 /* Assets.xcassets */; };
+		CEFCACF72B6C6E010089A580 /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81D7CA2B3D5DAD00610785 /* LaunchScreen.swift */; };
+		CEFCACF82B6C6E010089A580 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81F9012B414EDC003F9612 /* StartView.swift */; };
+		CEFCACF92B6C6E010089A580 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC306F72B6691CB0019E852 /* ThemeView.swift */; };
+		CEFCACFA2B6C6E010089A580 /* EmployeesViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81D7D12B3D5DAE00610785 /* EmployeesViews.swift */; };
+		CEFCACFB2B6C6E010089A580 /* AlarmSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81D7CB2B3D5DAD00610785 /* AlarmSound.swift */; };
+		CEFCACFC2B6C6E010089A580 /* NewProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96D86B2B42B72C00764C6F /* NewProject.swift */; };
+		CEFCACFD2B6C6E010089A580 /* SparkTimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81D7AB2B3D5D6200610785 /* SparkTimeApp.swift */; };
+		CEFCACFE2B6C6E010089A580 /* materials.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDEE6B92B4A297B00E4B074 /* materials.swift */; };
+		CEFCACFF2B6C6E010089A580 /* SlideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC306F92B6B425C0019E852 /* SlideMenu.swift */; };
+		CEFCAD002B6C6E010089A580 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81D7F22B3E6EC400610785 /* Triangle.swift */; };
+		CEFCAD012B6C6E010089A580 /* PreViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81D7D02B3D5DAE00610785 /* PreViews.swift */; };
+		CEFCAD022B6C6E010089A580 /* toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81D7C32B3D5DAD00610785 /* toolbar.swift */; };
+		CEFCAD032B6C6E010089A580 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81D7CE2B3D5DAD00610785 /* DataManager.swift */; };
+		CEFCAD042B6C6E010089A580 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81D7D42B3D5DAE00610785 /* ContentView.swift */; };
+		CEFCAD052B6C6E010089A580 /* SMSGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81D7BE2B3D5DAD00610785 /* SMSGenerator.swift */; };
+		CEFCAD062B6C6E010089A580 /* ContactPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81D7BD2B3D5DAD00610785 /* ContactPickerViewController.swift */; };
+		CEFCAD072B6C6E010089A580 /* ContactsSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81D7C02B3D5DAD00610785 /* ContactsSelectionView.swift */; };
+		CEFCAD082B6C6E010089A580 /* TESTERVIEW.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1AFC0F2B433746008FB9E7 /* TESTERVIEW.swift */; };
+		CEFCAD092B6C6E010089A580 /* EmployeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81D7D32B3D5DAE00610785 /* EmployeeView.swift */; };
+		CEFCAD0A2B6C6E010089A580 /* MaterialListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72CC2D2B40F71C00290E59 /* MaterialListView.swift */; };
+		CEFCAD0B2B6C6E010089A580 /* OutletsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16CFEE2B47C10100BFF5EC /* OutletsView.swift */; };
+		CEFCAD0C2B6C6E010089A580 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81D7BF2B3D5DAD00610785 /* extensions.swift */; };
+		CEFCAD0D2B6C6E010089A580 /* JobsViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81D7D22B3D5DAE00610785 /* JobsViews.swift */; };
+		CEFCAD0E2B6C6E010089A580 /* AlarmSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81D7C62B3D5DAD00610785 /* AlarmSettingView.swift */; };
+		CEFCAD102B6C6E010089A580 /* VComponents in Frameworks */ = {isa = PBXBuildFile; productRef = CEFCACF42B6C6E010089A580 /* VComponents */; };
+		CEFCAD122B6C6E010089A580 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE81D7B32B3D5D6400610785 /* Preview Assets.xcassets */; };
+		CEFCAD132B6C6E010089A580 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE75DB222B4290CB00C1AD81 /* Assets.xcassets */; };
+		CEFCAD142B6C6E010089A580 /* customAlarm-2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE81D7C72B3D5DAD00610785 /* customAlarm-2.mp3 */; };
+		CEFCAD152B6C6E010089A580 /* customalarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE81D7CD2B3D5DAD00610785 /* customalarm.mp3 */; };
+		CEFCAD162B6C6E010089A580 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE81D7ED2B3D9CEA00610785 /* Media.xcassets */; };
+		CEFCAD172B6C6E010089A580 /* alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE81D7C82B3D5DAD00610785 /* alarm.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
 		CE469CA02B65B568007BB264 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = pattern.proxy;
+			inputFiles = (
+			);
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
+		CEFCAD182B6C6E010089A580 /* PBXBuildRule */ = {
 			isa = PBXBuildRule;
 			compilerSpec = com.apple.compilers.proxy.script;
 			fileType = pattern.proxy;
@@ -81,13 +151,42 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		CEC5A7EC2B5A187100E8C0BB /* CopyFiles */ = {
+		CEC5A7EC2B5A187100E8C0BB /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 8;
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
+				CEFCACE42B6C6B280089A580 /* customalarm.mp3 in Copy Files */,
+				CEFCACDB2B6C6B280089A580 /* EmployeesViews.swift in Copy Files */,
+				CEFCACEF2B6C6B310089A580 /* SparkTimeApp.swift in Copy Files */,
+				CEFCACD82B6C6B020089A580 /* Triangle.swift in Copy Files */,
+				CEFCACD72B6C6AFE0089A580 /* materials.swift in Copy Files */,
+				CEFCACE32B6C6B280089A580 /* MaterialListView.swift in Copy Files */,
+				CEFCACE02B6C6B280089A580 /* EmployeeView.swift in Copy Files */,
+				CEFCACE62B6C6B280089A580 /* JobsViews.swift in Copy Files */,
+				CEFCACE22B6C6B280089A580 /* toolbar.swift in Copy Files */,
+				CEFCACEC2B6C6B280089A580 /* StartView.swift in Copy Files */,
+				CEFCACD92B6C6B280089A580 /* PreViews.swift in Copy Files */,
+				CEFCACE52B6C6B280089A580 /* ThemeView.swift in Copy Files */,
+				CEFCACDF2B6C6B280089A580 /* customAlarm-2.mp3 in Copy Files */,
+				CEFCACDD2B6C6B280089A580 /* alarm.mp3 in Copy Files */,
+				CEFCACDC2B6C6B280089A580 /* ContactPickerViewController.swift in Copy Files */,
+				CEFCACDE2B6C6B280089A580 /* NewProject.swift in Copy Files */,
+				CEFCACE82B6C6B280089A580 /* DataManager.swift in Copy Files */,
+				CEFCACF02B6C6B360089A580 /* TESTERVIEW.swift in Copy Files */,
+				CEFCACF22B6C6B500089A580 /* Assets.xcassets in Copy Files */,
+				CEFCACE72B6C6B280089A580 /* ContentView.swift in Copy Files */,
+				CEFCACDA2B6C6B280089A580 /* SMSGenerator.swift in Copy Files */,
+				CEFCACEB2B6C6B280089A580 /* AlarmSound.swift in Copy Files */,
+				CEFCACEA2B6C6B280089A580 /* extensions.swift in Copy Files */,
+				CEFCACE12B6C6B280089A580 /* ContactsSelectionView.swift in Copy Files */,
+				CEFCACD62B6C6AFA0089A580 /* SlideMenu.swift in Copy Files */,
+				CEFCACEE2B6C6B280089A580 /* LaunchScreen.swift in Copy Files */,
+				CEFCACE92B6C6B280089A580 /* AlarmSettingView.swift in Copy Files */,
+				CEFCACED2B6C6B280089A580 /* OutletsView.swift in Copy Files */,
 			);
+			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 1;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -124,7 +223,9 @@
 		CE84F9232B59EE360005D682 /* SparkTime.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = SparkTime.xctestplan; sourceTree = "<group>"; };
 		CE96D86B2B42B72C00764C6F /* NewProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProject.swift; sourceTree = "<group>"; };
 		CEC306F72B6691CB0019E852 /* ThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
+		CEC306F92B6B425C0019E852 /* SlideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenu.swift; sourceTree = "<group>"; };
 		CEDEE6B92B4A297B00E4B074 /* materials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = materials.swift; sourceTree = "<group>"; };
+		CEFCAD1D2B6C6E010089A580 /* SparkTime copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SparkTime copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +234,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE469C9D2B6348A5007BB264 /* VComponents in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEFCAD0F2B6C6E010089A580 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEFCAD102B6C6E010089A580 /* VComponents in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				CE81D7A82B3D5D6200610785 /* SparkTime.app */,
+				CEFCAD1D2B6C6E010089A580 /* SparkTime copy.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -205,6 +315,7 @@
 				CE81D7CD2B3D5DAD00610785 /* customalarm.mp3 */,
 				CE81D7F22B3E6EC400610785 /* Triangle.swift */,
 				CEDEE6B92B4A297B00E4B074 /* materials.swift */,
+				CEC306F92B6B425C0019E852 /* SlideMenu.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -249,6 +360,28 @@
 			productReference = CE81D7A82B3D5D6200610785 /* SparkTime.app */;
 			productType = "com.apple.product-type.application";
 		};
+		CEFCACF32B6C6E010089A580 /* SparkTime copy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEFCAD192B6C6E010089A580 /* Build configuration list for PBXNativeTarget "SparkTime copy" */;
+			buildPhases = (
+				CEFCACF62B6C6E010089A580 /* Sources */,
+				CEFCAD0F2B6C6E010089A580 /* Frameworks */,
+				CEFCAD112B6C6E010089A580 /* Resources */,
+				CEFCAD1E2B6C6E1C0089A580 /* ShellScript */,
+			);
+			buildRules = (
+				CEFCAD182B6C6E010089A580 /* PBXBuildRule */,
+			);
+			dependencies = (
+			);
+			name = "SparkTime copy";
+			packageProductDependencies = (
+				CEFCACF42B6C6E010089A580 /* VComponents */,
+			);
+			productName = SparkTime;
+			productReference = CEFCAD1D2B6C6E010089A580 /* SparkTime copy.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -288,6 +421,7 @@
 			targets = (
 				CE81D7A72B3D5D6200610785 /* SparkTime */,
 				CE84F92A2B5A14EC0005D682 /* Periphery */,
+				CEFCACF32B6C6E010089A580 /* SparkTime copy */,
 			);
 		};
 /* End PBXProject section */
@@ -303,6 +437,19 @@
 				CE81D7E62B3D5DAE00610785 /* customalarm.mp3 in Resources */,
 				CE81D7EE2B3D9CEA00610785 /* Media.xcassets in Resources */,
 				CE81D7E12B3D5DAE00610785 /* alarm.mp3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEFCAD112B6C6E010089A580 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEFCAD122B6C6E010089A580 /* Preview Assets.xcassets in Resources */,
+				CEFCAD132B6C6E010089A580 /* Assets.xcassets in Resources */,
+				CEFCAD142B6C6E010089A580 /* customAlarm-2.mp3 in Resources */,
+				CEFCAD152B6C6E010089A580 /* customalarm.mp3 in Resources */,
+				CEFCAD162B6C6E010089A580 /* Media.xcassets in Resources */,
+				CEFCAD172B6C6E010089A580 /* alarm.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,6 +474,23 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\n\nperiphery scan --project SparkTime.xcodeproj --schemes SparkTime --targets SparkTime\n";
 		};
+		CEFCAD1E2B6C6E1C0089A580 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nperiphery scan --project SparkTime.xcodeproj --schemes SparkTime --targets SparkTime\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -342,6 +506,7 @@
 				CE96D86C2B42B72C00764C6F /* NewProject.swift in Sources */,
 				CE81D7AC2B3D5D6200610785 /* SparkTimeApp.swift in Sources */,
 				CEDEE6BA2B4A297B00E4B074 /* materials.swift in Sources */,
+				CEC306FA2B6B425D0019E852 /* SlideMenu.swift in Sources */,
 				CE81D7F32B3E6EC400610785 /* Triangle.swift in Sources */,
 				CE81D7E82B3D5DAE00610785 /* PreViews.swift in Sources */,
 				CE81D7DC2B3D5DAE00610785 /* toolbar.swift in Sources */,
@@ -360,13 +525,40 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CEFCACF62B6C6E010089A580 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEFCACF72B6C6E010089A580 /* LaunchScreen.swift in Sources */,
+				CEFCACF82B6C6E010089A580 /* StartView.swift in Sources */,
+				CEFCACF92B6C6E010089A580 /* ThemeView.swift in Sources */,
+				CEFCACFA2B6C6E010089A580 /* EmployeesViews.swift in Sources */,
+				CEFCACFB2B6C6E010089A580 /* AlarmSound.swift in Sources */,
+				CEFCACFC2B6C6E010089A580 /* NewProject.swift in Sources */,
+				CEFCACFD2B6C6E010089A580 /* SparkTimeApp.swift in Sources */,
+				CEFCACFE2B6C6E010089A580 /* materials.swift in Sources */,
+				CEFCACFF2B6C6E010089A580 /* SlideMenu.swift in Sources */,
+				CEFCAD002B6C6E010089A580 /* Triangle.swift in Sources */,
+				CEFCAD012B6C6E010089A580 /* PreViews.swift in Sources */,
+				CEFCAD022B6C6E010089A580 /* toolbar.swift in Sources */,
+				CEFCAD032B6C6E010089A580 /* DataManager.swift in Sources */,
+				CEFCAD042B6C6E010089A580 /* ContentView.swift in Sources */,
+				CEFCAD052B6C6E010089A580 /* SMSGenerator.swift in Sources */,
+				CEFCAD062B6C6E010089A580 /* ContactPickerViewController.swift in Sources */,
+				CEFCAD072B6C6E010089A580 /* ContactsSelectionView.swift in Sources */,
+				CEFCAD082B6C6E010089A580 /* TESTERVIEW.swift in Sources */,
+				CEFCAD092B6C6E010089A580 /* EmployeeView.swift in Sources */,
+				CEFCAD0A2B6C6E010089A580 /* MaterialListView.swift in Sources */,
+				CEFCAD0B2B6C6E010089A580 /* OutletsView.swift in Sources */,
+				CEFCAD0C2B6C6E010089A580 /* extensions.swift in Sources */,
+				CEFCAD0D2B6C6E010089A580 /* JobsViews.swift in Sources */,
+				CEFCAD0E2B6C6E010089A580 /* AlarmSettingView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		CE469C9F2B65B160007BB264 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = CE469C9E2B65B160007BB264 /* VComponents */;
-		};
 		CE469CA22B65E2AF007BB264 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CE81D7A72B3D5D6200610785 /* SparkTime */;
@@ -593,8 +785,10 @@
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 729NUWS546;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
 				SWIFT_COMPILATION_MODE = "";
 				SWIFT_OPTIMIZATION_LEVEL = "";
@@ -607,8 +801,10 @@
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 729NUWS546;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
 				SWIFT_COMPILATION_MODE = "";
 				SWIFT_OPTIMIZATION_LEVEL = "";
@@ -724,11 +920,146 @@
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 729NUWS546;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
 				SWIFT_COMPILATION_MODE = "";
 				SWIFT_OPTIMIZATION_LEVEL = "";
+			};
+			name = "debug release";
+		};
+		CEFCAD1A2B6C6E010089A580 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = SparkTime/SparkTime.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SparkTime/Preview Content\"";
+				DEVELOPMENT_TEAM = 729NUWS546;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSContactsUsageDescription = "Contacts will be accessed so that the user can select someone from their phonebook to send their employee hours to every day";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_QUOTE_LINKER_ARGUMENTS_FOR_COMPILER_DRIVER = YES;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				NEW_SETTING = "";
+				OTHER_LDFLAGS = "";
+				OTHER_SWIFT_FLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.antflix.SparkTime;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CEFCAD1B2B6C6E010089A580 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = SparkTime/SparkTime.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SparkTime/Preview Content\"";
+				DEVELOPMENT_TEAM = 729NUWS546;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSContactsUsageDescription = "Contacts will be accessed so that the user can select someone from their phonebook to send their employee hours to every day";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_QUOTE_LINKER_ARGUMENTS_FOR_COMPILER_DRIVER = YES;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				NEW_SETTING = "";
+				OTHER_LDFLAGS = "";
+				OTHER_SWIFT_FLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.antflix.SparkTime;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CEFCAD1C2B6C6E010089A580 /* debug release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = SparkTime/SparkTime.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SparkTime/Preview Content\"";
+				DEVELOPMENT_TEAM = 729NUWS546;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSContactsUsageDescription = "Contacts will be accessed so that the user can select someone from their phonebook to send their employee hours to every day";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_QUOTE_LINKER_ARGUMENTS_FOR_COMPILER_DRIVER = YES;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				"MTL_ENABLE_DEBUG_INFO[arch=*]" = NO;
+				NEW_SETTING = "";
+				OTHER_LDFLAGS = "";
+				OTHER_SWIFT_FLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.antflix.SparkTime;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = "debug release";
 		};
@@ -765,10 +1096,28 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		CEFCAD192B6C6E010089A580 /* Build configuration list for PBXNativeTarget "SparkTime copy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEFCAD1A2B6C6E010089A580 /* Debug */,
+				CEFCAD1B2B6C6E010089A580 /* Release */,
+				CEFCAD1C2B6C6E010089A580 /* debug release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
 		CE469C9B2B6348A5007BB264 /* XCRemoteSwiftPackageReference "VComponents" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/VakhoKontridze/VComponents";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.3.1;
+			};
+		};
+		CEFCACF52B6C6E010089A580 /* XCRemoteSwiftPackageReference "VComponents" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/VakhoKontridze/VComponents";
 			requirement = {
@@ -784,9 +1133,9 @@
 			package = CE469C9B2B6348A5007BB264 /* XCRemoteSwiftPackageReference "VComponents" */;
 			productName = VComponents;
 		};
-		CE469C9E2B65B160007BB264 /* VComponents */ = {
+		CEFCACF42B6C6E010089A580 /* VComponents */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = CE469C9B2B6348A5007BB264 /* XCRemoteSwiftPackageReference "VComponents" */;
+			package = CEFCACF52B6C6E010089A580 /* XCRemoteSwiftPackageReference "VComponents" */;
 			productName = VComponents;
 		};
 /* End XCSwiftPackageProductDependency section */

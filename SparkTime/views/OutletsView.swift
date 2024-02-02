@@ -27,7 +27,7 @@ struct SingleGangView: View {
   @EnvironmentObject var dataManager: DataManager
   var body: some View {
     ZStack {
-		sunview()
+		
 		ScrollView {
 			VStack {
 				
@@ -70,7 +70,7 @@ struct SingleGangView: View {
 							.font(Font.title.weight(.ultraLight))
 					}
 	
-					Divider().background(Color.green).padding(.horizontal)
+					Divider().background(dataManager.isDarkMode ? .green: .black).padding(.horizontal)
 					HStack {
 						Text("Non-Controlled*").foregroundStyle(Color.white).padding()
 						
@@ -80,7 +80,7 @@ struct SingleGangView: View {
 							.foregroundColor(.green.opacity(0.9))  // Text color
 							.overlay(Rectangle().frame(height: 1).padding(.top, 30).foregroundColor(.blue))  // Underline
 							.padding(.trailing)
-						Image("duplexSymbol")
+						Image("sfduplex")
 							.padding(.bottom)
 							.padding(.trailing, 40)
 							.aspectRatio(contentMode: .fit)
@@ -98,6 +98,13 @@ struct SingleGangView: View {
 							.foregroundColor(.green.opacity(0.9))  // Text color
 							.overlay(Rectangle().frame(height: 1).padding(.top, 30).foregroundColor(.blue))  // Underline
 							.padding(.trailing)
+						Image("sfcontrolled")
+							.padding(.bottom)
+							.padding(.trailing, 40)
+							.aspectRatio(contentMode: .fit)
+							.symbolRenderingMode(.palette)
+							.foregroundStyle(Color.white, Color.blue, Color.black)
+							.font(Font.title.weight(.ultraLight))
 					}
 						.padding(.bottom)
 				}
@@ -125,7 +132,7 @@ struct SingleGangView: View {
 							.foregroundStyle(Color.white, Color.blue, Color.black)
 							.font(Font.title.weight(.ultraLight))
 					}
-					Divider().background(Color.green)
+					Divider().background(dataManager.isDarkMode ? .green: .black).padding(.horizontal)
 					HStack {
 						Text("Non-Controlled*").foregroundStyle(Color.white).padding()
 						
@@ -135,6 +142,13 @@ struct SingleGangView: View {
 							.foregroundColor(.green.opacity(0.9))  // Text color
 							.overlay(Rectangle().frame(height: 1).padding(.top, 30).foregroundColor(.blue))  // Underline
 							.padding(.trailing)
+						Image("sfquad")
+							.padding(.bottom)
+							.padding(.trailing, 40)
+							.aspectRatio(contentMode: .fit)
+							.symbolRenderingMode(.palette)
+							.foregroundStyle(Color.white, Color.blue, Color.black)
+							.font(Font.title.weight(.ultraLight))
 					}
 					
 					HStack {
@@ -146,7 +160,13 @@ struct SingleGangView: View {
 							.foregroundColor(.green.opacity(0.9))  // Text color
 							.overlay(Rectangle().frame(height: 1).padding(.top, 30).foregroundColor(.blue))  // Underline
 							.padding(.trailing)
-						
+						Image("sfquadControlled")
+							.padding(.bottom)
+							.padding(.trailing, 40)
+							.aspectRatio(contentMode: .fit)
+							.symbolRenderingMode(.palette)
+							.foregroundStyle(Color.white, Color.blue, Color.black)
+							.font(Font.title.weight(.ultraLight))
 					}.padding(.top)
 						.padding(.bottom)
 				} .background(
@@ -163,7 +183,7 @@ struct SingleGangView: View {
 		}
 		
 		.scrollDismissesKeyboard(.immediately)
-			
+			sunview()
     }
 	.navigationBarHidden(true)
 	  Text("*Include GFCI and cut-in outlets in quantities.")
@@ -184,15 +204,15 @@ struct BoxTypeView: View {
 		ZStack {
 			ScrollView {
 				VStack {
-					Text("Outlets Breakdown") .fontWeight(.black)
+					Text("Outlets detail") .fontWeight(.black)
 						.font(.largeTitle)
 						.multilineTextAlignment(.center)
 						.foregroundStyle(Color.white)
 						.frame(maxWidth: .infinity * 0.90, alignment: .center)
-					Text("Out of the \(dataManager.boxTotal) outlets how many of each do you have?").multilineTextAlignment(.center).padding().padding(
-						.top
-					).foregroundStyle(Color.white).font(Font.custom("Quicksand", size: 16).bold())
-						.frame(maxWidth: .infinity * 0.90, alignment: .center)
+					Text("Out of the \(dataManager.boxTotal) outlets how many of each do you have?").padding()
+						.foregroundStyle(Color.white)
+						.multilineTextAlignment(.center)
+						.font(.title2)
 					
 					Spacer()
 					VStack {
@@ -202,15 +222,15 @@ struct BoxTypeView: View {
 								Color.white
 							).font(.title2).bold()
 							Spacer()
-							Image("duplex")
-								.padding(.top)
-								.padding(.trailing, 40)
-								.aspectRatio(contentMode: .fit)
-								.symbolRenderingMode(.palette)
-								.foregroundStyle(Color.white, Color.blue, Color.black)
-								.font(Font.title.weight(.ultraLight))
+//							Image("duplex")
+//								.padding(.top)
+//								.padding(.trailing, 40)
+//								.aspectRatio(contentMode: .fit)
+//								.symbolRenderingMode(.palette)
+//								.foregroundStyle(Color.white, Color.blue, Color.black)
+//								.font(Font.title.weight(.ultraLight))
 						}
-						Divider().background(Color.green).padding(.horizontal)
+						Divider().background(dataManager.isDarkMode ? .green: .black).padding(.horizontal)
 						HStack {
 							Text("Cut-in").foregroundStyle(Color.white).padding()
 							
@@ -220,6 +240,15 @@ struct BoxTypeView: View {
 								.foregroundColor(.green.opacity(0.9))  // Text color
 								.overlay(Rectangle().frame(height: 1).padding(.top, 30).foregroundColor(.blue))  // Underline
 								.padding(.trailing)
+							Image("sfcutin")
+								.resizable()
+								.frame(width:20					, height: 40)
+								.padding(.bottom)
+								.padding(.trailing, 60)
+								.aspectRatio(contentMode: .fit)
+								.symbolRenderingMode(.palette)
+								.foregroundStyle(Color.white, Color.blue, Color.black)
+								.font(Font.title.weight(.ultraLight))
 						}
 						
 						HStack {
@@ -231,6 +260,13 @@ struct BoxTypeView: View {
 								.foregroundColor(.green.opacity(0.9))  // Text color
 								.overlay(Rectangle().frame(height: 1).padding(.top, 30).foregroundColor(.blue))  // Underline
 								.padding(.trailing)
+							Image("sfGFCI")
+								.padding(.bottom)
+								.padding(.trailing, 40)
+								.aspectRatio(contentMode: .fit)
+								.symbolRenderingMode(.palette)
+								.foregroundStyle(Color.white, Color.blue, Color.black)
+								.font(Font.title.weight(.ultraLight))
 						}
 					} .background(
 						.ultraThinMaterial,
@@ -251,15 +287,9 @@ struct BoxTypeView: View {
 							Text("Two Gang").padding(.top, 25.0).padding(.horizontal).foregroundStyle(Color.white)
 								.font(.title2).bold()
 							Spacer()
-							Image("quad")
-								.padding(.top)
-								.padding(.trailing, 20)
-								.aspectRatio(contentMode: .fit)
-								.symbolRenderingMode(.palette)
-								.foregroundStyle(Color.white, Color.blue, Color.black)
-								.font(Font.title.weight(.ultraLight))
+						
 						}
-						Divider().background(Color.green)
+						Divider().background(dataManager.isDarkMode ? .green: .black).padding(.horizontal)
 						HStack {
 							Text("Cut-in").foregroundStyle(Color.white).padding()
 							
@@ -269,6 +299,15 @@ struct BoxTypeView: View {
 								.foregroundColor(.green.opacity(0.9))  // Text color
 								.overlay(Rectangle().frame(height: 1).padding(.top, 30).foregroundColor(.blue))  // Underline
 								.padding(.trailing)
+							Image("sfcutinQuad")
+								.resizable()
+								.frame(width:40					, height: 40)
+								.padding(.bottom)
+								.padding(.trailing, 40)
+								.aspectRatio(contentMode: .fit)
+								.symbolRenderingMode(.palette)
+								.foregroundStyle(Color.white, Color.blue, Color.black)
+								.font(Font.title.weight(.ultraLight))
 						}
 						
 						HStack {
@@ -280,6 +319,14 @@ struct BoxTypeView: View {
 								.foregroundColor(.green.opacity(0.9))  // Text color
 								.overlay(Rectangle().frame(height: 1).padding(.top, 30).foregroundColor(.blue))  // Underline
 								.padding(.trailing)
+							Image("sfGFCI")
+								.padding(.bottom)
+								.padding(.trailing, 40)
+								.aspectRatio(contentMode: .fit)
+								.symbolRenderingMode(.palette)
+								.foregroundStyle(Color.white, Color.blue, Color.black)
+								.font(Font.title.weight(.ultraLight))
+							
 						}
 						.padding(.bottom)
 						
@@ -306,7 +353,7 @@ struct BoxTypeView: View {
 sunview()
 		}.onAppear {
 			dataManager.calculateTotal()
-		
+			
 		} .navigationBarHidden(true)
 		
 	}
@@ -327,19 +374,17 @@ struct SwitchesView: View {
 						.foregroundStyle(Color.white)
 						.frame(maxWidth: .infinity * 0.90, alignment: .center)
 					Text("Count all of your switches and enter quantities below.")
-						.multilineTextAlignment(.center).padding().padding(
-							.top
-						)
-						.foregroundStyle(Color.white).font(Font
-							.custom("Quicksand", size: 16).bold())
-						.frame(maxWidth: .infinity * 0.90, alignment: .center)
+						.padding()
 					
+						.foregroundStyle(Color.white)
+						.multilineTextAlignment(.center)
+						.font(.title2)
 					Spacer()
 					VStack {
 						HStack {
 							Spacer()
 							Text("Single Gang")
-								.foregroundStyle(Color.white).font(.title).bold().padding(
+								.foregroundStyle(Color.white).font(.title2).bold().padding(
 									.top, 25.0)
 							Spacer()
 							Image("toggleswitch")
@@ -350,7 +395,7 @@ struct SwitchesView: View {
 								.foregroundStyle(Color.white.opacity(0.6), Color.blue, Color.black)
 								.font(Font.title.weight(.ultraLight))
 						}
-						Divider().background(Color.green).padding(.horizontal)
+						Divider().background(dataManager.isDarkMode ? .green: .black).padding(.horizontal)
 						
 						HStack(alignment: .top, spacing: 1) {
 							VStack {
@@ -435,7 +480,7 @@ struct SwitchesView: View {
 								.foregroundStyle(Color.white, Color.blue, Color.black)
 								.font(Font.title.weight(.ultraLight))
 						}
-						Divider().background(Color.green).padding(.horizontal)
+						Divider().background(dataManager.isDarkMode ? .green: .black).padding(.horizontal)
 						
 						HStack(alignment: .top, spacing: 1) {
 							VStack {
@@ -521,6 +566,7 @@ struct SwitchesView: View {
 	}
 	
 }
+
 @available(iOS 17.0, *)
 struct MiscView: View {
   @EnvironmentObject var dataManager: DataManager
@@ -532,19 +578,20 @@ struct MiscView: View {
 			VStack {
 				
 				
-				Text("Remaining Wall Devices") .fontWeight(.black)
+				Text("Miscellaneous") .fontWeight(.black)
 					.font(.largeTitle)
 					.multilineTextAlignment(.center)
 					.foregroundStyle(Color.white)
 					.frame(maxWidth: .infinity * 0.90, alignment: .center)
-				Text("Count The remaing wall devices and enter below?").padding(
-					.top
-				).foregroundStyle(Color.white).font(Font.custom("Quicksand", size: 12).bold())
-					.frame(maxWidth: .infinity * 0.90, alignment: .center)
+				Text("Count The remaing wall devices and enter below?").padding()
+				
+					.foregroundStyle(Color.white)
+					.multilineTextAlignment(.center)
+					.font(.title2)
 				Spacer()
 				VStack {
-					Text("Instahots").padding(.top).font(.title2)
-					Divider().background(Color.green).padding(.horizontal)
+					Text("Instahots").padding(.top).font(.title2).foregroundStyle(.white)
+					Divider().background(dataManager.isDarkMode ? .green: .black).padding(.horizontal)
 					
 					HStack {
 						HStack {
@@ -581,8 +628,8 @@ struct MiscView: View {
 				//        )
 				//        .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous)).padding(.horizontal)
 				VStack {
-					Text("Furniture Feeds").padding(.top).font(.title2)
-					Divider().background(Color.green).padding(.horizontal)
+					Text("Furniture Feeds").padding(.top).font(.title2).foregroundStyle(.white)
+					Divider().background(dataManager.isDarkMode ? .green: .black).padding(.horizontal)
 					
 					HStack {
 						HStack {
@@ -620,8 +667,9 @@ struct MiscView: View {
 				//        .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous)).padding(.horizontal)
 				VStack {
 					VStack {
-						Text("Misc.").padding(.top).font(.title2)
-						Divider().background(Color.green).padding(.horizontal)
+						Text("Misc.").padding(.top).font(.title2).foregroundStyle(.white)
+						Divider().background(dataManager.isDarkMode ? .green: .black).padding(.horizontal)
+						
 					}
 					
 					HStack {
@@ -676,7 +724,7 @@ struct MiscView: View {
 							"WIREMOLD- #RC9A15TC", "WIREMOLD- #RC7ATC", "WIREMOLD- #WIREMOLD- 6ATC2P",
 							"WIREMOLD- #152CHA",
 						]
-						Text("Floor Devices")
+						Text("Floor Devices").foregroundStyle(.white)
 						
 						Picker("Options", selection: $selectedOption) {
 							ForEach(options, id: \.self) { option in
@@ -872,6 +920,40 @@ struct OutletCalculatorView: View {
 		
 	}
 }
+struct GearIconPopover: View {
+	@Binding var materialRequirements: [String: [String: Int]]
+	@EnvironmentObject var dataManager: DataManager  // Assuming DataManager is needed
+	@State private var showPopover = false
+	
+	var body: some View {
+		GeometryReader { geometry in
+			ZStack {
+				Button(action: {
+					showPopover.toggle()
+					
+				}) {
+					Image(systemName: "gear")
+						.resizable()
+						.frame(width: 32					, height: 32)
+						.foregroundStyle(dataManager.isDarkMode ? .red: .black)
+						.padding()
+				}
+				.foregroundColor(.white)
+				.clipShape(Circle())
+				.popover(isPresented: $showPopover) {
+					EditMaterialRequirementsView(
+						materialRequirements: $materialRequirements,
+						allMaterials: dataManager.allMaterials,
+						materialKeys: $dataManager.materialKeys,
+						deviceTypesOrder: dataManager.deviceTypesOrder)
+				}
+			}
+			.position(x: 40, y: geometry.size.height - 30 )
+		}
+		
+	}
+}
+
 struct MaterialsListView: View {
 	var materials: [String: Int]
 	@EnvironmentObject var dataManager: DataManager  // Assuming you have a dataManager object
@@ -908,8 +990,12 @@ struct EditMaterialRequirementsView: View {
 	var body: some View {
 		HStack {
 			List {
-				ForEach(deviceTypesOrder, id: \.self) { deviceType in
-					sectionView(for: deviceType)
+				ForEach(dataManager.deviceCategories.keys.sorted(), id: \.self) { category in
+					DisclosureGroup(category) {
+						ForEach(dataManager.deviceCategories[category]!, id: \.self) { outletType in
+							DeviceSectionView(outletType: outletType)
+						}
+					}
 				}
 			}
 		}
@@ -918,53 +1004,91 @@ struct EditMaterialRequirementsView: View {
 	private var materialTypes: [String] {
 		materialRequirements.keys.sorted()
 	}
-	
 	@ViewBuilder
-	private func sectionView(for outletType: String) -> some View {
+	private func sectionView() -> some View {
+		HStack {
+			List {
+				ForEach(dataManager.deviceCategories.keys.sorted(), id: \.self) { category in
+					DisclosureGroup {
+						ForEach(dataManager.deviceCategories[category]!, id: \.self) { outletType in
+							DeviceSectionView(outletType: outletType)
+						}
+	 
+	
+					} label: {
+						CategoryLabelView(categoryName: category)
+					}.bold()
+						.padding(.top, 40)
+					// Apply any necessary modifiers to the DisclosureGroup itself
+				}
+			}
+		}
+	}
+	@ViewBuilder
+	private func DeviceSectionView(outletType: String) -> some View {
 		VStack {
 			DisclosureGroup(isExpanded: $expandedDeviceTypes[outletType]) {
 				ForEach(materialRequirementKeys(for: outletType), id: \.self) { key in
 					materialRequirementRow(outletType: outletType, key: key)
-					
 				}
 				HStack {
-					HStack {
-						Button(action: {
-							selectedDeviceType = outletType
-							showingAddMaterialSheet = true
-						}) {
-							Image(systemName: "plus.circle.fill")
-								.foregroundColor(.green)
-						}.sheet(isPresented: $showingAddMaterialSheet) {
-							AddMaterialView(
-								materialRequirements: $materialRequirements,
-								materialKeys: $materialKeys,
-								allMaterials: dataManager.allMaterials,
-								selectedDeviceType: outletType)
-							
-						}
-						Text("Add\nMaterial").foregroundStyle(Color.blue)
-					}.padding().background(Color.red)
-					Spacer()
+					Button(action: {
+						selectedDeviceType = outletType
+						showingAddMaterialSheet = true
+					}) {
+						Label("Add Material", systemImage: "plus.circle.fill")
+							.labelStyle(VerticalLabelStyle())
+							.foregroundColor(.green)
+					}
+					.buttonStyle(PlainButtonStyle()) // Prevents the button style from interfering with the tap gesture.
+					.sheet(isPresented: $showingAddMaterialSheet) {
+						AddMaterialView(
+							materialRequirements: $materialRequirements,
+							materialKeys: $materialKeys,
+							allMaterials: dataManager.allMaterials,
+							selectedDeviceType: outletType)
+					}
+					.padding(.trailing)
 					
-					HStack {
-						Button(action: {
-							saveToUserDefaults()
-							expandedDeviceTypes[outletType] = false
-						}) {
-							Image("savesymbol")
-							
-								.aspectRatio(contentMode: .fit)
-								.symbolRenderingMode(.palette)
-								.foregroundStyle(Color("BWText"), .green)
-						}
-						Text("Save\nChanges").foregroundStyle(Color.blue)
-						
-					}.padding()
-					
+					Button(action: {
+						saveToUserDefaults()
+						expandedDeviceTypes[outletType] = false
+					}) {
+						Label("Save Changes", systemImage: "checkmark.circle.fill")
+							.labelStyle(VerticalLabelStyle())
+							.foregroundColor(.blue)
+					}
+					.buttonStyle(PlainButtonStyle())
+					.padding(.leading)
 				}
+				.padding() // Adjust padding as needed to ensure clear separation from the disclosure group.
 			} label: {
 				Text(outletType)
+					.foregroundStyle(Color.blue)
+					.bold()
+					.font(.headline)
+			}
+			.contentShape(Rectangle()) // This ensures the entire area of the disclosure label is tappable, without interfering with the buttons.
+		}
+		.padding(.vertical) // Adjust padding to ensure sufficient space around sections.
+	}
+	struct CategoryLabelView: View {
+		var categoryName: String
+		
+		var body: some View {
+			Text(categoryName)
+				.padding()
+				.foregroundStyle(Color.red)
+				.bold()
+				.font(.headline) // Optional: further adjust the font size and style as needed
+								 // Add any other styling modifiers you need here
+		}
+	}
+	struct VerticalLabelStyle: LabelStyle {
+		func makeBody(configuration: Configuration) -> some View {
+			VStack {
+				configuration.icon
+				configuration.title
 			}
 		}
 	}

@@ -315,7 +315,42 @@ class DataManager: ObservableObject {
 	func deleteSelectedContacts() {
 		UserDefaults.standard.removeObject(forKey: "selectedContactsKey")
 	}
-	
+	let deviceCategories: [String: [String]] = [
+		"Single Gang Category": ["Standard Bracket Box", "GFCI","Cut-In",
+								 "Surface Mounted",
+								 "Controlled",
+								 "Scaled" ],
+		"Two Gang Category": ["Quad Bracket Box",
+							  "Quad GFCI",
+							  "Quad Cut-in",
+							  "Quad Surface Mounted",
+							  "Quad Controlled"],
+		"Switches": ["Line-Voltage Dimming Switch",
+					 "Line-Voltage Dimming Cut-in",
+					 "LV/Cat5 Switch",
+					 "LV/Cat5 Cut-in",
+					 "Line-Voltage Switch",
+					 "Line-Voltage Cut-in",
+					 "2-Gang Switch",
+					 "2-Gang Cut-In Switch",
+					 "2-Gang LV/Cat5 Switch",
+					 "2-Gang LV/Cat5 Cut-In Switch"
+		],
+		"Miscilaneous": ["3wire Furniture Feed",
+						 "4wire Furniture Feed",
+						 "Bracket Box Data",
+						 "Homerun Quantity",
+						 "Longest HR Length",
+						 "Cut-in Data",
+						 "6in Floor Device",
+						 "4in Floor Device",
+						 "Single-Pole 277V 40A Instahot",
+						 "2-Pole 208V 40A Instahot",
+						 "Single-Pole 277V 30A Instahot"
+			
+		]
+		// Add other categories
+	]
 	@Published var deviceTypesOrder: [String] = 	["Standard Bracket Box",
 														 "GFCI",
 														 "Cut-In",

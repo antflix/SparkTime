@@ -31,6 +31,7 @@ struct ThemeView: View {
 							Text("Select a theme color")
 								.padding(.bottom)
 								.fontWeight(.bold)
+								.foregroundStyle(dataManager.isDarkMode ? .white: .black)
 							Spacer()
 							
 							
@@ -42,6 +43,7 @@ struct ThemeView: View {
 									.frame(width: 24, height: 24)
 								Text(color.description.capitalized)
 									.padding()
+									.foregroundStyle(dataManager.isDarkMode ? .white: .black)
 							}
 							.onTapGesture {
 								dataManager.themeColor = color
