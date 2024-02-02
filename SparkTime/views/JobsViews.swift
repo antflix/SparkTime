@@ -1,11 +1,5 @@
 import SwiftUI
 
-struct LoadingView: View {
-	var body: some View {
-		TriangleLoader()
-			.colorScheme(.dark)
-	}
-}
 
 @available(iOS 17.0, *)
 struct JobsView: View {
@@ -15,13 +9,9 @@ struct JobsView: View {
 	@State private var searchText = ""
 	@State private var jobs = [[String]]()
 	@State private var selectedRow: Int?
-	@Environment(\.colorScheme) var colorScheme
 	private let apiURL = "https://app.antflix.net/api/joblist"
 	@State private var showingPopover: [Int: Bool] = [:]
 	@State private var isEmployeeViewActive = false
-	private func updatePopoverArray() {
-		showingPopover = Dictionary(uniqueKeysWithValues: jobs.enumerated().map { index, _ in (index, false) })
-	}
 	
 	var filteredJobs: [[String]] {
 		if searchText.isEmpty {
@@ -228,12 +218,3 @@ struct JobsView: View {
 	}
 }
 
-@available(iOS 17.0, *)
-struct JobsView_Previews: PreviewProvider {
-	static var previews: some View {
-		NavigationStack {
-			JobsView()
-				.environmentObject(DataManager())
-		}
-	}
-}

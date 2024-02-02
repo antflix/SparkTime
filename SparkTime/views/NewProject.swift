@@ -1,148 +1,8 @@
 
 import SwiftUI
-extension Color {
-	static func random()->Color {
-		let r = Double.random(in: 0 ... 1)
-		let g = Double.random(in: 0 ... 1)
-		let b = Double.random(in: 0 ... 1)
-		return Color(red: r, green: g, blue: b)
-	}
-}
 
 
 import AVFoundation
-@available(iOS 17.0, *)
-struct CreateProjectView: View {
-	@State private var isCreated = false
-	@State private var isError = false
-	@EnvironmentObject var dataManager: DataManager
-	@State private var isAnimating = false
-	@State private var symbolAnimation = false
-	@Environment(\.colorScheme) var colorScheme // Get the current color scheme
-	
-	private let generator = UIImpactFeedbackGenerator(style: .heavy)
-	var body: some View {
-		
-		ZStack() {
-			sunview()
-			
-			VStack {
-				Spacer()
-				Text("Enter a Project Name").foregroundStyle(Color.white).font(Font.custom("Quicksand", size: 30).bold()).padding(.vertical, 30)
-					.frame(maxWidth: .infinity * 0.90, alignment: .center)
-				Text("Then click 'Submit' to start your first material list").foregroundStyle(Color.white).font(Font.custom("Quicksand", size: 15))
-					.frame(maxWidth: .infinity * 0.90, alignment: .center)
-				
-				TextField("Enter project name", text: $dataManager.projectName)
-					.padding()
-					.background(Color.gray.opacity(0.7))
-					.foregroundColor(.white)
-
-					.border(Color.black.opacity(0.5), width: 1.0)
-					.background(Color("Color 7").opacity(0.8)).background(
-						ZStack {
-							RoundedRectangle(cornerRadius: 0, style: .circular)
-								.fill(Color.gray.opacity(0.01))
-							Blur(style: .dark)
-						}
-					)
-				Spacer()
-				Button(action: {
-					// Call the function here
-					createProject(projectName: dataManager.projectName)
-					
-					// Navigate to the second view
-					isCreated = true
-				}) {
-					Text("Create Project")
-						.buttonStyle(PlainButtonStyle())
-						.padding()
-						.background(Color.green)
-						.cornerRadius(8.0)
-						.bold()
-						.foregroundColor(.white)
-				}
-				
-				NavigationLink(destination: MaterialListView(), isActive: $isCreated) {
-					EmptyView()
-				}
-				.buttonStyle(PlainButtonStyle())
-
-				.background(Color.green)
-				.bold()
-				.foregroundColor(.white)
-				.padding()
-				
-				
-			}
-			.padding()
-			//			HStack {
-			//				if colorScheme == .light {
-			//					Image("moonsun")
-			//						.symbolRenderingMode(.multicolor)
-			//						.font(.title2)
-			//						.foregroundStyle(Color.blue.opacity(0.9), Color.blue.opacity(0.9))
-			//				} else {
-			//					Image("sunmoon")
-			//						.symbolRenderingMode(.palette)
-			//						.font(.title2)
-			//						.foregroundStyle(Color.blue, Color.white)
-			//				}
-			//			}
-			//			.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: dataManager.isDarkMode ? .topTrailing : .topLeading)
-			//			.padding(.all, 50)
-			//			.onTapGesture {
-			//				withAnimation(.easeInOut(duration: 3)) {
-			//					dataManager.isDarkMode.toggle()
-			//				}
-			//			}
-			//			.onAppear {
-			//				symbolAnimation.toggle()
-			//			}
-			//		}
-			//
-		}
-		.modifier(DarkModeLightModeBackground()) // Apply the modifier here
-		
-	}
-	
-	// #if DEBUG
-	//	@ObserveInjection var forceRedraw
-	// #endif
-	//
-	
-	func createProject(projectName: String) {
-		// Define the URL for the API endpoint
-		
-		generator.impactOccurred()
-		let url = URL(string: "https://apps.antflix.net/api/create_project")
-		
-		// Prepare the request
-		var request = URLRequest(url: url!)
-		request.httpMethod = "POST"
-		request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-		
-		// Create the body of the request
-		let bodyData = ["project_name": projectName]
-		request.httpBody = try? JSONSerialization.data(withJSONObject: bodyData, options: [])
-		
-		// Create the URLSession task
-		let task = URLSession.shared.dataTask(with: request) { data, _, error in
-			// Handle the response here
-			if let error = error {
-				print("Error: \(error)")
-				isError = true
-			} else if let data = data {
-				let str = String(data: data, encoding: .utf8)
-				print("Received data:\n\(str ?? "")")
-				isCreated = true
-			}
-		}
-		
-		// Start the task
-		task.resume()
-	}
-}
 
 
 //
@@ -219,11 +79,6 @@ struct blueGradient: View {
 	@EnvironmentObject var dataManager: DataManager
 	@State private var gradientA: [Color] = [.black, .blue]
 	@State private var gradientB: [Color] = [.blue, .black]
-	@State private var quadBracketBox = ""
-	@State private var quadGFCI = ""
-	@State private var quadCutIn = ""
-	@State private var quadSurfaceMounted = ""
-	@State private var quadControlled = ""
 	@State private var firstPlane: Bool = true
 	
 	func setGradient(gradient: [Color]) {
@@ -236,12 +91,7 @@ struct blueGradient: View {
 		}
 		firstPlane = !firstPlane
 	}
-	@State private var in6FloorDevice = ""
-	@State private var singlePole277V40AInstahot = ""
-	@State private var pole208V40AInstahot = ""
-	@State private var singlePole277V30AInstahot = ""
 	@State private var selected = 1
-	@State private var goHome = false
 	var body: some View {
 		
 		ZStack {
@@ -278,28 +128,11 @@ struct blueGradient: View {
 
 import SwiftUI
 
-// SwiftUI wrapper for UIVisualEffectView
-struct BlurView: UIViewRepresentable {
-	var style: UIBlurEffect.Style
-	
-	func makeUIView(context: Context) -> UIVisualEffectView {
-		UIVisualEffectView(effect: UIBlurEffect(style: style))
-	}
-	
-	func updateUIView(_ uiView: UIVisualEffectView, context: Context) {
-		uiView.effect = UIBlurEffect(style: style)
-	}
-}
 
 struct lightblueGradient: View {
 	@EnvironmentObject var dataManager: DataManager
 	@State private var gradientA: [Color] = [.gray, .blue]
 	@State private var gradientB: [Color] = [.gray, .gray]
-	@State private var quadBracketBox = ""
-	@State private var quadGFCI = ""
-	@State private var quadCutIn = ""
-	@State private var quadSurfaceMounted = ""
-	@State private var quadControlled = ""
 	@State private var firstPlane: Bool = true
 	@State private var selected = 1
 	
@@ -428,25 +261,5 @@ struct sunview: View {
 	}
 }
 
-@available(iOS 17.0, *)
-struct sunview_Previews: PreviewProvider {
-	
-	static var previews: some View {
-		NavigationStack {
-			sunview()
-				.environmentObject(DataManager())
-				.navigationBarTitleDisplayMode(.inline)
-			
-		}
-	}
-}
 
 
-@available(iOS 17.0, *)
-struct NewProject_Previews: PreviewProvider {
-	static var previews: some View {
-		lightblueGradient()
-			.environmentObject(DataManager())
-
-	}
-}

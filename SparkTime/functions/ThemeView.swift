@@ -73,13 +73,3 @@ struct ThemeView: View {
 	
 }
 
-@available(iOS 17.0, *)
-struct themeView: PreviewProvider {
-	static var previews: some View {
-		NavigationView {
-			ThemeView()
-				.environmentObject(DataManager())
-			
-		}
-	}
-}

@@ -104,9 +104,11 @@ struct SlideMenu: View {
 						}) {
 							// Use a system icon
 							Image("colorWheel")
+								.buttonStyle(PlainButtonStyle())
 								.symbolRenderingMode(.multicolor)
 								.onAppear {
 									symbolAnimation.toggle()
+									
 								}
 							
 								.symbolEffect(.variableColor.reversing.cumulative, options: .repeat(100).speed(1), value: symbolAnimation)
@@ -137,14 +139,17 @@ struct SlideMenu: View {
 			}) {
 				if self.isShowing {
 					Image(systemName: "chevron.compact.backward")
+						.buttonStyle(PlainButtonStyle())
 						.imageScale(.large)
 						.foregroundColor(.black)
 						.padding(15)
 						.background(Color.white.opacity(0.4))
 						.clipShape(Circle())
+					
 				}
 				else {
 					Image(systemName: "chevron.compact.forward")
+						.buttonStyle(PlainButtonStyle())
 						.imageScale(.large)
 						.foregroundColor(.black)
 						.padding(15)

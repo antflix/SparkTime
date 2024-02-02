@@ -154,7 +154,7 @@ struct StartView: View {
 					.onAppear {
 						symbolAnimation.toggle()
 					}
-				
+					.buttonStyle(PlainButtonStyle())
 					.symbolEffect(.variableColor.reversing.cumulative, options: .repeat(100).speed(1), value: symbolAnimation)
 					.font(.largeTitle)
 				// Customize your button's appearance
@@ -234,10 +234,4 @@ struct StartView: View {
 
 
 
-@available(iOS 17.0, *)
-struct InputFormView_Previews: PreviewProvider {
-	static var previews: some View {
-		StartView()
-	}
-}
 

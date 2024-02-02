@@ -5,7 +5,6 @@ struct EmployeesViews: View {
     @EnvironmentObject var dataManager: DataManager // Access DataManager passed via environmentObject
 
     @State private var showingPopover = false // Create a state variable to control popover visibility
-	@State private var navigateBack = false
 
     var isAnyEmployeeAssignedHours: Bool {
         // Check if any employee has assigned hours in DataManager
@@ -209,14 +208,3 @@ struct EmployeeRowView: View {
 }
 
 
-@available(iOS 17.0, *)
-struct EmployeesViews_Previews: PreviewProvider {
-	static var previews: some View {
-		
-		NavigationStack {
-			EmployeesViews()
-				.environmentObject(DataManager())
-		}
-
-	}
-}

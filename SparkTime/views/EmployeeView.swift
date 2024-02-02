@@ -7,7 +7,6 @@ struct EmployeeView: View {
   @State private var selectedHours = 0
     @Environment(\.colorScheme) var colorScheme
     @State private var showingPopover = false // Create a state variable to control
-	@State private var navigateBack = false
 
     // Add a computed property to check if selections are made
     var isSelectionComplete: Bool {
@@ -282,15 +281,3 @@ struct EmployeeSelectionRow: View {
 
 }
 
-@available(iOS 17.0, *)
-struct EmployeeView_Previews: PreviewProvider {
-
-	static var previews: some View {
-		NavigationStack {
-			EmployeeView()
-				.environmentObject(DataManager())
-				.navigationBarTitleDisplayMode(.inline)
-
-		}
-	}
-}

@@ -6,20 +6,6 @@
 //
 
 import SwiftUI
-struct CustomNavigationBarTitle: UIViewRepresentable {
-	var text: String
-	
-	func makeUIView(context: Context) -> UIView {
-		let label = UILabel()
-		label.text = text
-		label.font = UIFont(name: "Quicksand", size: 80)
-		label.textColor = UIColor.white
-		label.textAlignment = .center
-		return label
-	}
-	
-	func updateUIView(_ uiView: UIView, context: Context) {}
-}
 
 
 @available(iOS 17.0, *)
@@ -778,9 +764,6 @@ struct MiscView: View {
 struct OutletCalculatorView: View {
 	
 	@EnvironmentObject var dataManager: DataManager
-	@State private var isSaved: Bool = false
-	@State private var isFetched: Bool = false
-	@State private var isError: Bool = false
 	
 	@State private var materialRequirements: [String: [String: Int]]
 	@State private var showingMaterialList = false
@@ -794,7 +777,6 @@ struct OutletCalculatorView: View {
 		}
 	}
 	
-	@State private var calculatedMaterials: [String: Int] = [:]
 	
 	@State private var editingMaterialRequirements: Bool = false
 	func loadFromUserDefaults() {
@@ -822,21 +804,24 @@ struct OutletCalculatorView: View {
 					editingMaterialRequirements.toggle()
 					saveToUserDefaults()
 				}
+				.buttonStyle(PlainButtonStyle())
 				.foregroundStyle(Color("BWText"))
 				.padding()
 				.background(Color.blue)
 				
 				.sheet(isPresented: $editingMaterialRequirements) {
 					EditMaterialRequirementsView(
-						materialRequirements: $materialRequirements, allMaterials: dataManager.allMaterials,
-						materialKeys: $dataManager.materialKeys, deviceTypesOrder: dataManager.deviceTypesOrder)
+						materialRequirements: $materialRequirements,
+						materialKeys: $dataManager.materialKeys)
 				}
 				
 				Button(action: {
 					self.showingMaterialList = true
 				}) {
 					Text("Calculate Materials")
-				}.foregroundStyle(Color("BWText"))
+				}
+				.buttonStyle(PlainButtonStyle())
+				.foregroundStyle(Color("BWText"))
 					.padding()
 					.background(Color.blue)
 				
@@ -920,39 +905,6 @@ struct OutletCalculatorView: View {
 		
 	}
 }
-struct GearIconPopover: View {
-	@Binding var materialRequirements: [String: [String: Int]]
-	@EnvironmentObject var dataManager: DataManager  // Assuming DataManager is needed
-	@State private var showPopover = false
-	
-	var body: some View {
-		GeometryReader { geometry in
-			ZStack {
-				Button(action: {
-					showPopover.toggle()
-					
-				}) {
-					Image(systemName: "gear")
-						.resizable()
-						.frame(width: 32					, height: 32)
-						.foregroundStyle(dataManager.isDarkMode ? .red: .black)
-						.padding()
-				}
-				.foregroundColor(.white)
-				.clipShape(Circle())
-				.popover(isPresented: $showPopover) {
-					EditMaterialRequirementsView(
-						materialRequirements: $materialRequirements,
-						allMaterials: dataManager.allMaterials,
-						materialKeys: $dataManager.materialKeys,
-						deviceTypesOrder: dataManager.deviceTypesOrder)
-				}
-			}
-			.position(x: 40, y: geometry.size.height - 30 )
-		}
-		
-	}
-}
 
 struct MaterialsListView: View {
 	var materials: [String: Int]
@@ -975,12 +927,9 @@ struct EditMaterialRequirementsView: View {
 	@EnvironmentObject var dataManager: DataManager
 	@State private var expandedDeviceTypes: [String: Bool] = [:]
 	@Binding var materialRequirements: [String: [String: Int]]
-	var allMaterials: [String]
 	@Binding var materialKeys: [String: [String]]
 	// State to handle new material addition
 	@State private var showingAddMaterialSheet = false
-	@State private var selectedDeviceType: String = ""
-	var deviceTypesOrder: [String]
 	func saveToUserDefaults() {
 		if let encoded = try? JSONEncoder().encode(materialRequirements) {
 			UserDefaults.standard.set(encoded, forKey: "MaterialRequirements")
@@ -1001,29 +950,6 @@ struct EditMaterialRequirementsView: View {
 		}
 		
 	}
-	private var materialTypes: [String] {
-		materialRequirements.keys.sorted()
-	}
-	@ViewBuilder
-	private func sectionView() -> some View {
-		HStack {
-			List {
-				ForEach(dataManager.deviceCategories.keys.sorted(), id: \.self) { category in
-					DisclosureGroup {
-						ForEach(dataManager.deviceCategories[category]!, id: \.self) { outletType in
-							DeviceSectionView(outletType: outletType)
-						}
-	 
-	
-					} label: {
-						CategoryLabelView(categoryName: category)
-					}.bold()
-						.padding(.top, 40)
-					// Apply any necessary modifiers to the DisclosureGroup itself
-				}
-			}
-		}
-	}
 	@ViewBuilder
 	private func DeviceSectionView(outletType: String) -> some View {
 		VStack {
@@ -1033,7 +959,7 @@ struct EditMaterialRequirementsView: View {
 				}
 				HStack {
 					Button(action: {
-						selectedDeviceType = outletType
+						
 						showingAddMaterialSheet = true
 					}) {
 						Label("Add Material", systemImage: "plus.circle.fill")
@@ -1045,7 +971,7 @@ struct EditMaterialRequirementsView: View {
 						AddMaterialView(
 							materialRequirements: $materialRequirements,
 							materialKeys: $materialKeys,
-							allMaterials: dataManager.allMaterials,
+						
 							selectedDeviceType: outletType)
 					}
 					.padding(.trailing)
@@ -1071,18 +997,6 @@ struct EditMaterialRequirementsView: View {
 			.contentShape(Rectangle()) // This ensures the entire area of the disclosure label is tappable, without interfering with the buttons.
 		}
 		.padding(.vertical) // Adjust padding to ensure sufficient space around sections.
-	}
-	struct CategoryLabelView: View {
-		var categoryName: String
-		
-		var body: some View {
-			Text(categoryName)
-				.padding()
-				.foregroundStyle(Color.red)
-				.bold()
-				.font(.headline) // Optional: further adjust the font size and style as needed
-								 // Add any other styling modifiers you need here
-		}
 	}
 	struct VerticalLabelStyle: LabelStyle {
 		func makeBody(configuration: Configuration) -> some View {
@@ -1125,7 +1039,6 @@ struct AddMaterialView: View {
 	@Binding var materialRequirements: [String: [String: Int]]
 	@Binding var materialKeys: [String: [String]]
 	
-	let allMaterials: [String]
 	var selectedDeviceType: String
 	
 	@State private var selectedMaterial: String = ""
@@ -1199,14 +1112,6 @@ struct AddMaterialView: View {
 	}
 }
 
-@available(iOS 17.0, *)
-struct OutletCalculatorView_Previews: PreviewProvider {
-	static var previews: some View {
-		OutletCalculatorView()
-			.environmentObject(DataManager())
-		
-	}
-}
 //List {
 //
 //				Section(header: Text("Single Gang Devices").foregroundStyle(dataManager.isDarkMode ? Color.white : Color.black).id(UUID()))  {
@@ -1334,21 +1239,3 @@ struct CustomTextField: View {
 
 
 
-@available(iOS 17.0, *)
-struct OutletsView_Previews: PreviewProvider {
-  static var previews: some View {
-    NavigationStack {
-      MaterialListView()
-        .environmentObject(DataManager())
-    }
-    NavigationStack {
-      MaterialFormView()
-        .environmentObject(DataManager())
-    }
-	  NavigationStack {
-		  BoxTypeView()
-			  .environmentObject(DataManager())
-	  }
-	  
-  }
-}

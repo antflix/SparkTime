@@ -12,8 +12,6 @@ import SwiftUI
 @available(iOS 17.0, *)
 struct PreViews: View {
     @EnvironmentObject var dataManager: DataManager
-    // To save the formatted data for later use:
-    @State private var savedData: String = "" // State variable to store the formatted data
 	@State private var navigateBack = false
     func generateSMSBody() {
         let sortedOutput = SMSGenerator.sortedFormat(dataManager: dataManager)
@@ -234,12 +232,3 @@ struct BubbleShape: Shape {
     }
 }
 
-@available(iOS 17.0, *)
-struct PreViews_Previews: PreviewProvider {
-    static var previews: some View {
-		NavigationView {
-			PreViews()
-				.environmentObject(DataManager())
-		}
-    }
-}

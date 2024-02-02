@@ -1,29 +1,16 @@
 //import MessageUI
 import SwiftUI
 
-struct Job: Codable {
-    let jobId: String
-    let jobName: String
-    let jobDate: String
-}
 
 @available(iOS 17.0, *)
 struct ContentView: View {
     @StateObject var dataManager = DataManager()
 //    @StateObject var darkModeSettings = DataManager() // Use observed object for dark modem
 
-    @State private var selectedJobID: String?
-    @Environment(\.colorScheme) var colorScheme
-    @State private var isSettingsOpen = false // Add this line to declare isSettingsOpen
-    @State private var symbolName = "gear"
-    @State private var isSettingsViewPresented = false
-    @State private var isPopoverPresented = false
-    @State private var isContactsPresented = false
 
-    @State private var settingsPopoverAnchor: Anchor<CGRect>?
 
     enum Tab {
-        case start, material, jobs, createProject, singleGangView, employee, employees, preview, switches, themes, testView
+        case start, material, jobs, createProject, singleGangView, employee, employees, preview, switches, themes
     }
 
     @State private var selectedTab: Tab = .start // Track selected tab
@@ -64,8 +51,7 @@ struct ContentView: View {
 					case .themes:
 						ThemeView()
 							.environmentObject(dataManager)
-                case .testView:
-						ContentView1()
+               
                        
                 }
 
@@ -177,29 +163,3 @@ struct ContentView: View {
 //    }
 // }
 
-@available(iOS 17.0, *)
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-            .environmentObject(DataManager())
-            .background(Color("Color 2"))
-
-        EmployeeView()
-            .environmentObject(DataManager())
-            .background(Color("Color 2"))
-        EmployeesViews()
-            .environmentObject(DataManager())
-            .background(Color("Color 2"))
-        PreViews()
-            .environmentObject(DataManager())
-            .background(Color("Color 2"))
-        StartView()
-            .environmentObject(DataManager())
-
-        MaterialFormView()
-            .environmentObject(DataManager())
-
-//      SettingsView()
-//          .environmentObject(DataManager())
-    }
-}

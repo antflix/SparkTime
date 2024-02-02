@@ -65,8 +65,3 @@ struct CustomContactPickerView: UIViewControllerRepresentable {
 		// Update the controller if needed
 	}
 }
-struct ContactPickerView_Previews: PreviewProvider {
-	static var previews: some View {
-		CustomContactPickerView()
-	}
-}
